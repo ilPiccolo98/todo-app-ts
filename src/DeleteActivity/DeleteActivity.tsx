@@ -7,6 +7,7 @@ import {
 } from "../activities/activitiesSlice";
 import { useDispatch, useSelector } from "react-redux";
 import initialValue, { DeleteActivityValues } from "./initialValues";
+import validationSchema from "./validationSchema";
 
 const DeleteActivity: React.FC = (): JSX.Element => {
   const dispatch = useDispatch();
@@ -19,8 +20,12 @@ const DeleteActivity: React.FC = (): JSX.Element => {
   };
 
   return (
-    <Formik initialValues={initialValue} onSubmit={handleSubmit}>
-      {() => (
+    <Formik
+      initialValues={initialValue}
+      onSubmit={handleSubmit}
+      validationSchema={validationSchema}
+    >
+      {(values) => (
         <Form>
           <div>
             <label htmlFor="id">Id</label>
@@ -38,6 +43,9 @@ const DeleteActivity: React.FC = (): JSX.Element => {
             type="submit"
             value="Delete"
           />
+          {Object.values(values.errors).map((error: string) => (
+            <p key={error}>{error}</p>
+          ))}
         </Form>
       )}
     </Formik>

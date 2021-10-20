@@ -2,7 +2,7 @@ import getInitialActivities, { createActivity } from "./initialActivities";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { Activity } from "./initialActivities";
 import { RootState } from "./activitiesStore";
-import { WritableDraft } from "@reduxjs/toolkit/node_modules/immer/dist/internal";
+import { WritableDraft } from "immer/dist/internal";
 
 type UpdateActionParameter = {
   id: number;

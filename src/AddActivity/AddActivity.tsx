@@ -4,6 +4,7 @@ import { Formik, Form, Field } from "formik";
 import initialValue from "./initialValues";
 import { AddActivityValues } from "./initialValues";
 import { addActivity } from "../activities/activitiesSlice";
+import validationSchema from "./validationSchema";
 
 const AddActivity: React.FC = (): JSX.Element => {
   const dispatch = useDispatch();
@@ -18,8 +19,12 @@ const AddActivity: React.FC = (): JSX.Element => {
   };
 
   return (
-    <Formik initialValues={initialValue} onSubmit={handleSubmit}>
-      {() => (
+    <Formik
+      initialValues={initialValue}
+      onSubmit={handleSubmit}
+      validationSchema={validationSchema}
+    >
+      {(values) => (
         <Form>
           <div>
             <label data-testid="name-label-add-activity" htmlFor="name">
@@ -66,6 +71,9 @@ const AddActivity: React.FC = (): JSX.Element => {
               value="Insert"
             />
           </div>
+          {Object.values(values.errors).map((error: string) => (
+            <p key={error}>{error}</p>
+          ))}
         </Form>
       )}
     </Formik>

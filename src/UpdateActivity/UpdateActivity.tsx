@@ -9,8 +9,9 @@ import { Formik, Form, Field } from "formik";
 import { Activity } from "../activities/initialActivities";
 import { RootState } from "../activities/activitiesStore";
 import initialValue, { UpdateActivityValues } from "./initialValues";
+import validationSchema from "./validationSchema";
 
-const UpdateActivity = () => {
+const UpdateActivity: React.FC = (): JSX.Element => {
   const dispatch = useDispatch();
   const activities: Array<Activity> = useSelector<RootState, Array<Activity>>(
     activitiesSelector
@@ -30,8 +31,12 @@ const UpdateActivity = () => {
   };
 
   return (
-    <Formik initialValues={initialValue} onSubmit={handleSubmit}>
-      {() => (
+    <Formik
+      initialValues={initialValue}
+      onSubmit={handleSubmit}
+      validationSchema={validationSchema}
+    >
+      {(values) => (
         <Form>
           <div>
             <label htmlFor="id">Id</label>
@@ -78,6 +83,9 @@ const UpdateActivity = () => {
             value="Update"
             data-testid="update-button-update-activity"
           />
+          {Object.values(values.errors).map((error: string) => (
+            <p key={error}>{error}</p>
+          ))}
         </Form>
       )}
     </Formik>
