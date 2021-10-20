@@ -1,22 +1,41 @@
-import getInitialActivities from "./initialActivities";
+import getInitialActivities, { createActivity } from "./initialActivities";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import Activity from "../types/classes/activity";
+import { Activity } from "./initialActivities";
 import { RootState } from "./activitiesStore";
 import { WritableDraft } from "@reduxjs/toolkit/node_modules/immer/dist/internal";
 
-const executeAddActivity = (
-  activities: WritableDraft<Activity>[],
-  activity: Activity
-): void => {
-  activities.push(activity);
+type UpdateActionParameter = {
+  id: number;
+  name: string;
+  description: string;
+  status: boolean;
 };
 
-const doesActivityExist = (
+type DeleteActionParameter = {
+  id: number;
+};
+
+type AddActionParameter = {
+  name: string;
+  description: string;
+  status: boolean;
+};
+
+const executeAddActivity = (
   activities: WritableDraft<Activity>[],
+  name: string,
+  description: string,
+  status: boolean
+): void => {
+  activities.push(createActivity(name, description, status));
+};
+
+export const doesActivityExist = (
+  activities: Array<Activity>,
   id: number
 ): boolean => {
   for (let i: number = 0; i !== activities.length; ++i) {
-    if (activities[i].Id === id) {
+    if (activities[i].id === id) {
       return true;
     }
   }
@@ -28,7 +47,7 @@ const getPositionActivity = (
   id: number
 ): number => {
   let index: number = 0;
-  while (activities[index].Id !== id) {
+  while (activities[index].id !== id) {
     ++index;
   }
   return index;
@@ -38,13 +57,8 @@ const executeDeleteActivity = (
   activities: WritableDraft<Activity>[],
   id: number
 ): void => {
-  if (doesActivityExist(activities, id)) {
-    const positionActivityToDelete: number = getPositionActivity(
-      activities,
-      id
-    );
-    activities.splice(positionActivityToDelete, 1);
-  }
+  const positionActivityToDelete: number = getPositionActivity(activities, id);
+  activities.splice(positionActivityToDelete, 1);
 };
 
 const updateActivityItem = (
@@ -54,9 +68,9 @@ const updateActivityItem = (
   description: string,
   status: boolean
 ): void => {
-  activities[position].Name = name;
-  activities[position].Description = description;
-  activities[position].Status = status;
+  activities[position].name = name;
+  activities[position].description = description;
+  activities[position].status = status;
 };
 
 const executeUpdateActivity = (
@@ -65,10 +79,7 @@ const executeUpdateActivity = (
   name: string,
   description: string,
   status: boolean
-): boolean => {
-  if (!doesActivityExist(activities, id)) {
-    return false;
-  }
+): void => {
   const positionActivityToUpdate: number = getPositionActivity(activities, id);
   updateActivityItem(
     activities,
@@ -77,26 +88,30 @@ const executeUpdateActivity = (
     description,
     status
   );
-  return true;
 };
 
 const activitiesSlice = createSlice({
   name: "activities",
   initialState: getInitialActivities(),
   reducers: {
-    addActivity: (state, action: PayloadAction<Activity>) => {
-      executeAddActivity(state, action.payload);
+    addActivity: (state, action: PayloadAction<AddActionParameter>) => {
+      executeAddActivity(
+        state,
+        action.payload.name,
+        action.payload.description,
+        action.payload.status
+      );
     },
-    deleteActivity: (state, action: PayloadAction<Activity>) => {
-      executeDeleteActivity(state, action.payload.Id);
+    deleteActivity: (state, action: PayloadAction<DeleteActionParameter>) => {
+      executeDeleteActivity(state, action.payload.id);
     },
-    updateActivity: (state, action: PayloadAction<Activity>) => {
+    updateActivity: (state, action: PayloadAction<UpdateActionParameter>) => {
       executeUpdateActivity(
         state,
-        action.payload.Id,
-        action.payload.Name,
-        action.payload.Description,
-        action.payload.Status
+        action.payload.id,
+        action.payload.name,
+        action.payload.description,
+        action.payload.status
       );
     },
   },

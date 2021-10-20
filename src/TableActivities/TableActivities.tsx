@@ -1,21 +1,21 @@
 import React from "react";
 import { activitiesSelector } from "../activities/activitiesSlice";
-import Activity from "../types/classes/activity";
+import { Activity } from "../activities/initialActivities";
 import { useSelector } from "react-redux";
 import { RootState } from "../activities/activitiesStore";
 
-const TableActivities = (): JSX.Element => {
+const TableActivities: React.FC = (): JSX.Element => {
   const activities: Array<Activity> = useSelector<RootState, Array<Activity>>(
     activitiesSelector
   );
   const generateBodyTable = (activities: Array<Activity>): JSX.Element[] => {
     return activities.map((activity: Activity): JSX.Element => {
       return (
-        <tr key={activity.Id}>
-          <td>{activity.Id}</td>
-          <td>{activity.Name}</td>
-          <td>{activity.Description}</td>
-          <td>{activity.Status.toString()}</td>
+        <tr key={activity.id}>
+          <td>{activity.id}</td>
+          <td>{activity.name}</td>
+          <td>{activity.description}</td>
+          <td>{activity.status.toString()}</td>
         </tr>
       );
     });
