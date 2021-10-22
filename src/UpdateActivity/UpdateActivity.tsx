@@ -5,51 +5,45 @@ import {
   activitiesSelector,
   doesActivityExist,
 } from "../activities/activitiesSlice";
-import { FormikProps } from "formik";
 import { Activity } from "../activities/initialActivities";
 import { RootState } from "../activities/activitiesStore";
-import initialValue, { UpdateActivityValues } from "./initialValues";
+import initialValues from "./initialValues";
 import validationSchema from "./validationSchema";
 import Form from "../components/Form/Form";
 import Submit from "../components/Submit/Submit";
 import TextField from "../components/TextField/TextField";
 import CheckBox from "../components/CheckBox/CheckBox";
 import "./UpdateActivity.css";
+import { useFormik } from "formik";
 
 const UpdateActivity: React.FC = (): JSX.Element => {
   const dispatch = useDispatch();
+  const formik = useFormik({
+    initialValues,
+    validationSchema,
+    onSubmit: (values) => {
+      if (doesActivityExist(activities, +values.id)) {
+        dispatch(
+          updateActivity({
+            id: +values.id,
+            name: values.name,
+            description: values.description,
+            status: values.status,
+          })
+        );
+      }
+    },
+  });
   const activities: Array<Activity> = useSelector<RootState, Array<Activity>>(
     activitiesSelector
   );
 
-  const handleSubmit = (values: UpdateActivityValues) => {
-    if (doesActivityExist(activities, +values.id)) {
-      dispatch(
-        updateActivity({
-          id: +values.id,
-          name: values.name,
-          description: values.description,
-          status: values.status,
-        })
-      );
-    }
-  };
-
-  const handleError = (values: FormikProps<UpdateActivityValues>) => {
-    return Object.values(values.errors).map((error: string) => (
-      <p key={error}>{error}</p>
-    ));
-  };
-
   return (
     <Form
-      initialValues={initialValue}
-      validationSchema={validationSchema}
       variant="primary"
-      handleSubmit={handleSubmit}
-      handleError={handleError}
       className="update-form"
       title="Update Activity"
+      onSubmit={formik.handleSubmit}
     >
       <div>
         <div className="float-left">
@@ -60,6 +54,8 @@ const UpdateActivity: React.FC = (): JSX.Element => {
             type="numbers"
             variant="secondary"
             placeholder="Insert Id"
+            onChange={formik.handleChange}
+            value={formik.values.id}
           />
         </div>
         <div className="float-right">
@@ -70,6 +66,8 @@ const UpdateActivity: React.FC = (): JSX.Element => {
             type="text"
             variant="secondary"
             placeholder="Insert name"
+            onChange={formik.handleChange}
+            value={formik.values.name}
           />
         </div>
         <div className="float-left description-style">
@@ -80,6 +78,8 @@ const UpdateActivity: React.FC = (): JSX.Element => {
             type="text"
             variant="secondary"
             placeholder="Insert description"
+            onChange={formik.handleChange}
+            value={formik.values.description}
           />
         </div>
         <div className="checkbox-status-update">
@@ -89,6 +89,8 @@ const UpdateActivity: React.FC = (): JSX.Element => {
             name="status"
             variant="secondary"
             label="Status"
+            onChange={formik.handleChange}
+            value={formik.values.status}
           />
         </div>
         <Submit className="update-button" variant="primary">

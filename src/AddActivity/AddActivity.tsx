@@ -1,12 +1,11 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import initialValue from "./initialValues";
-import { AddActivityValues } from "./initialValues";
+import initialValues from "./initialValues";
 import { addActivity } from "../activities/activitiesSlice";
 import validationSchema from "./validationSchema";
 import Form from "../components/Form/Form";
 import TextField from "../components/TextField/TextField";
-import { FormikProps } from "formik";
+import { useFormik } from "formik";
 import Submit from "../components/Submit/Submit";
 import CheckBox from "../components/CheckBox/CheckBox";
 import "./AddActivity.css";
@@ -15,31 +14,26 @@ export interface AddActivityProps {}
 
 export const AddActivity: React.FC<AddActivityProps> = (): JSX.Element => {
   const dispatch = useDispatch();
-  const handleSubmit = (values: AddActivityValues) => {
-    dispatch(
-      addActivity({
-        name: values.name,
-        description: values.description,
-        status: values.status,
-      })
-    );
-  };
-
-  const handleError = (values: FormikProps<AddActivityValues>) => {
-    return Object.values(values.errors).map((error: string) => (
-      <p key={error}>{error}</p>
-    ));
-  };
+  const formik = useFormik({
+    initialValues,
+    validationSchema,
+    onSubmit: (values) => {
+      dispatch(
+        addActivity({
+          name: values.name,
+          description: values.description,
+          status: values.status,
+        })
+      );
+    },
+  });
 
   return (
     <Form
       title="Add Activity"
-      initialValues={initialValue}
-      handleSubmit={handleSubmit}
-      validationSchema={validationSchema}
       variant="primary"
-      handleError={handleError}
       className="form-style"
+      onSubmit={formik.handleSubmit}
     >
       <div>
         <div className="float-left">
@@ -50,6 +44,8 @@ export const AddActivity: React.FC<AddActivityProps> = (): JSX.Element => {
             placeholder="Insert name"
             variant="secondary"
             type="text"
+            onChange={formik.handleChange}
+            value={formik.values.name}
           />
         </div>
         <div className="float-right">
@@ -60,6 +56,8 @@ export const AddActivity: React.FC<AddActivityProps> = (): JSX.Element => {
             placeholder="Insert description"
             variant="secondary"
             type="text"
+            onChange={formik.handleChange}
+            value={formik.values.description}
           />
         </div>
         <div className="status">
@@ -68,6 +66,8 @@ export const AddActivity: React.FC<AddActivityProps> = (): JSX.Element => {
             name="status"
             variant="secondary"
             label="Status"
+            onChange={formik.handleChange}
+            value={formik.values.status}
           />
         </div>
         <Submit className="submit-button" id="submit" variant="primary">

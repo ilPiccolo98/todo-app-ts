@@ -1,5 +1,4 @@
 import React, { HTMLAttributes, KeyboardEvent, useState } from "react";
-import { Field } from "formik";
 import "./TextField.css";
 
 export interface TextFieldProps extends HTMLAttributes<HTMLInputElement> {
@@ -11,6 +10,8 @@ export interface TextFieldProps extends HTMLAttributes<HTMLInputElement> {
   type: "text" | "password" | "numbers";
   /**Name of the TextField */
   name?: string;
+  /**Value that should be content in the Textfield */
+  value?: any;
 }
 
 /**TextField of the todo-app application */
@@ -35,7 +36,7 @@ export const TextField: React.FC<TextFieldProps> = ({
         <p className={`${props.variant}-label`}>
           <b>{labelText}</b>
         </p>
-        <Field
+        <input
           {...props}
           onKeyPress={handleKeyPress}
           className={`textField ${props.className}`}

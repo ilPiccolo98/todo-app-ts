@@ -15,6 +15,9 @@ const meta: Meta = {
     type: {
       defaultValue: "text",
     },
+    name: {
+      defaultValue: "name",
+    },
   },
 };
 
@@ -27,6 +30,7 @@ primary.args = {
   variant: "primary",
   labelText: "primary",
   placeholder: "primary",
+  name: "name",
 };
 
 export const secondary = Template.bind({});
@@ -34,4 +38,5 @@ secondary.args = {
   variant: "secondary",
   labelText: "secondary",
   placeholder: "secondary",
+  name: "name",
 };

@@ -9,6 +9,9 @@ const meta: Meta = {
     children: {
       defaultValue: "Default text",
     },
+    onClick: {
+      action: "clicked",
+    },
   },
 };
 

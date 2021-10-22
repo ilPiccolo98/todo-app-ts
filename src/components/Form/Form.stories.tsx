@@ -1,4 +1,4 @@
-import React from "react";
+import React, { FormEvent } from "react";
 import { Meta, Story } from "@storybook/react";
 import { Form, FormProps } from "./Form";
 import TextField from "../TextField/TextField";
@@ -8,23 +8,16 @@ const meta: Meta = {
   title: "Form",
   component: Form,
   argTypes: {
-    initialValues: {
-      defaultValue: {
-        name: "",
-        surname: "",
-      },
-    },
     children: {
       defaultValue: <div></div>,
     },
-    handleSubmit: {
-      defaultValue: (values: Object) => {},
+    onSubmit: {
+      defaultValue: (e: FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+      },
     },
     title: {
       defaultValue: "Form component",
-    },
-    handleError: {
-      defaultValue: (values: Object) => <p>Error</p>,
     },
   },
 };
@@ -35,10 +28,6 @@ const Template: Story<FormProps> = (args) => <Form {...args} />;
 
 export const Primary = Template.bind({});
 Primary.args = {
-  initialValues: {
-    name: "",
-    surname: "",
-  },
   children: (
     <div>
       <div style={{ float: "left" }}>
@@ -69,18 +58,15 @@ Primary.args = {
       />
     </div>
   ),
-  handleSubmit: (values: Object) => {},
+  onSubmit: (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+  },
   title: "Primary form",
-  handleError: (values: Object) => <p>Error</p>,
   variant: "primary",
 };
 
 export const Secondary = Template.bind({});
 Secondary.args = {
-  initialValues: {
-    name: "",
-    surname: "",
-  },
   children: (
     <div>
       <div style={{ float: "left" }}>
@@ -111,8 +97,9 @@ Secondary.args = {
       />
     </div>
   ),
-  handleSubmit: (values: Object) => {},
+  onSubmit: (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+  },
   title: "Secondary form",
-  handleError: (values: Object) => <p>Error</p>,
   variant: "secondary",
 };
