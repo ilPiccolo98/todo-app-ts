@@ -1,0 +1,12 @@
+.primary-checkbox {
+  background-color: white;
+  border-radius: 3px;
+  padding: 5px;
+}
+
+.secondary-checkbox {
+  background-color: gray;
+  border-radius: 3px;
+  padding: 5px;
+  color: white;
+}

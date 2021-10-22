@@ -1,0 +1,37 @@
+.primary-container {
+  width: 150px;
+  height: 120px;
+  background-color: white;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.primary-label {
+  font-size: 15px;
+  color: black;
+  font-family: sans-serif;
+}
+
+.secondary-container {
+  width: 150px;
+  height: 120px;
+  background-color: gray;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.secondary-label {
+  font-size: 15px;
+  color: white;
+  font-family: sans-serif;
+}
+
+.textField {
+  border-radius: 5px;
+}
+
+.error {
+  color: red;
+  font-family: sans-serif;
+  font-size: 15px;
+}

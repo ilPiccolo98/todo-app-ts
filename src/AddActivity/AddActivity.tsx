@@ -1,12 +1,19 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import { Formik, Form, Field } from "formik";
 import initialValue from "./initialValues";
 import { AddActivityValues } from "./initialValues";
 import { addActivity } from "../activities/activitiesSlice";
 import validationSchema from "./validationSchema";
+import Form from "../components/Form/Form";
+import TextField from "../components/TextField/TextField";
+import { FormikProps } from "formik";
+import Submit from "../components/Submit/Submit";
+import CheckBox from "../components/CheckBox/CheckBox";
+import "./AddActivity.css";
 
-const AddActivity: React.FC = (): JSX.Element => {
+export interface AddActivityProps {}
+
+export const AddActivity: React.FC<AddActivityProps> = (): JSX.Element => {
   const dispatch = useDispatch();
   const handleSubmit = (values: AddActivityValues) => {
     dispatch(
@@ -18,65 +25,55 @@ const AddActivity: React.FC = (): JSX.Element => {
     );
   };
 
+  const handleError = (values: FormikProps<AddActivityValues>) => {
+    return Object.values(values.errors).map((error: string) => (
+      <p key={error}>{error}</p>
+    ));
+  };
+
   return (
-    <Formik
+    <Form
       initialValues={initialValue}
-      onSubmit={handleSubmit}
+      handleSubmit={handleSubmit}
       validationSchema={validationSchema}
+      variant="primary"
+      handleError={handleError}
+      className="form-style"
     >
-      {(values) => (
-        <Form>
-          <div>
-            <label data-testid="name-label-add-activity" htmlFor="name">
-              Name
-            </label>
-            <Field
-              data-testid="name-field-add-activity"
-              id="name"
-              name="name"
-              placeholder="Name"
-            />
-          </div>
-          <div>
-            <label
-              data-testid="description-label-add-activity"
-              htmlFor="description"
-            >
-              Description
-            </label>
-            <Field
-              data-testid="description-field-add-activity"
-              id="description"
-              name="description"
-              placeholder="Description"
-            />
-          </div>
-          <div>
-            <label data-testid="status-label-add-activity" htmlFor="status">
-              Status
-            </label>
-            <Field
-              data-testid="status-checkbox-add-activity"
-              type="checkbox"
-              id="status"
-              name="status"
-            />
-          </div>
-          <div>
-            <input
-              data-testid="insert-button-add-activity"
-              type="submit"
-              id="submit"
-              name="submit"
-              value="Insert"
-            />
-          </div>
-          {Object.values(values.errors).map((error: string) => (
-            <p key={error}>{error}</p>
-          ))}
-        </Form>
-      )}
-    </Formik>
+      <div>
+        <div className="float-left">
+          <TextField
+            id="name"
+            name="name"
+            labelText="Name"
+            placeholder="Insert name"
+            variant="secondary"
+            type="text"
+          />
+        </div>
+        <div className="float-right">
+          <TextField
+            id="description"
+            name="description"
+            labelText="Description"
+            placeholder="Insert description"
+            variant="secondary"
+            type="text"
+          />
+        </div>
+        <div className="status">
+          <CheckBox
+            id="status"
+            name="status"
+            variant="secondary"
+            label="Status"
+          />
+        </div>
+        <Submit className="submit-button" id="submit" variant="primary">
+          Add
+        </Submit>
+      </div>
+    </Form>
   );
 };
 

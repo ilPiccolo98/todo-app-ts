@@ -35,7 +35,7 @@ const DeleteActivity: React.FC = (): JSX.Element => {
               id="id"
               name="id"
               placeholder="Id"
-              patterm="[0-9]*"
+              pattern="[0-9]*"
             />
           </div>
           <input
