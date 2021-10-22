@@ -1,0 +1,25 @@
+.update-form {
+  position: relative;
+  left: 30%;
+}
+
+.float-left-update {
+  float: left;
+}
+
+.float-right-update {
+  float: right;
+}
+
+.description-style {
+  margin-top: 10px;
+}
+
+.checkbox-status-update {
+  clear: both;
+  padding-top: 15px;
+}
+
+.update-button {
+  margin-top: 15px;
+}

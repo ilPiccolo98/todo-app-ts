@@ -36,7 +36,11 @@ export const Form: React.FC<FormProps> = ({
       <p>
         <b>{title}</b>
       </p>
-      <Formik initialValues={initialValues} onSubmit={handleSubmit}>
+      <Formik
+        initialValues={initialValues}
+        validationSchema={props.validationSchema}
+        onSubmit={handleSubmit}
+      >
         {(values) => (
           <FormFormik>
             {children}

@@ -5,11 +5,16 @@ import {
   activitiesSelector,
   doesActivityExist,
 } from "../activities/activitiesSlice";
-import { Formik, Form, Field } from "formik";
+import { FormikProps } from "formik";
 import { Activity } from "../activities/initialActivities";
 import { RootState } from "../activities/activitiesStore";
 import initialValue, { UpdateActivityValues } from "./initialValues";
 import validationSchema from "./validationSchema";
+import Form from "../components/Form/Form";
+import Submit from "../components/Submit/Submit";
+import TextField from "../components/TextField/TextField";
+import CheckBox from "../components/CheckBox/CheckBox";
+import "./UpdateActivity.css";
 
 const UpdateActivity: React.FC = (): JSX.Element => {
   const dispatch = useDispatch();
@@ -30,65 +35,67 @@ const UpdateActivity: React.FC = (): JSX.Element => {
     }
   };
 
+  const handleError = (values: FormikProps<UpdateActivityValues>) => {
+    return Object.values(values.errors).map((error: string) => (
+      <p key={error}>{error}</p>
+    ));
+  };
+
   return (
-    <Formik
+    <Form
       initialValues={initialValue}
-      onSubmit={handleSubmit}
       validationSchema={validationSchema}
+      variant="primary"
+      handleSubmit={handleSubmit}
+      handleError={handleError}
+      className="update-form"
+      title="Update Activity"
     >
-      {(values) => (
-        <Form>
-          <div>
-            <label htmlFor="id">Id</label>
-            <Field
-              type="text"
-              pattern="[0-9]*"
-              id="id"
-              name="id"
-              placeholder="Id"
-              data-testid="id-field-update-activity"
-            />
-          </div>
-          <div>
-            <label htmlFor="name">Name</label>
-            <Field
-              type="text"
-              id="name"
-              name="name"
-              placeholder="Name"
-              data-testid="name-field-update-activity"
-            />
-          </div>
-          <div>
-            <label htmlFor="description">Description</label>
-            <Field
-              type="text"
-              id="description"
-              name="description"
-              placeholder="Description"
-              data-testid="description-field-update-activity"
-            />
-          </div>
-          <div>
-            <label htmlFor="status">Status</label>
-            <Field
-              type="checkbox"
-              id="status"
-              name="status"
-              data-testid="status-checkbox-update-activity"
-            />
-          </div>
-          <input
-            type="submit"
-            value="Update"
-            data-testid="update-button-update-activity"
+      <div>
+        <div className="float-left">
+          <TextField
+            labelText="Id"
+            id="id"
+            name="id"
+            type="numbers"
+            variant="secondary"
+            placeholder="Insert Id"
           />
-          {Object.values(values.errors).map((error: string) => (
-            <p key={error}>{error}</p>
-          ))}
-        </Form>
-      )}
-    </Formik>
+        </div>
+        <div className="float-right">
+          <TextField
+            labelText="Name"
+            id="name"
+            name="name"
+            type="text"
+            variant="secondary"
+            placeholder="Insert name"
+          />
+        </div>
+        <div className="float-left description-style">
+          <TextField
+            labelText="Description"
+            id="description"
+            name="description"
+            type="text"
+            variant="secondary"
+            placeholder="Insert description"
+          />
+        </div>
+        <div className="checkbox-status-update">
+          <CheckBox
+            className="checkbox-status-update"
+            id="status"
+            name="status"
+            variant="secondary"
+            label="Status"
+          />
+        </div>
+        <Submit className="update-button" variant="primary">
+          Update
+        </Submit>
+      </div>
+    </Form>
   );
 };
 

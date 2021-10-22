@@ -1,5 +1,4 @@
 import React from "react";
-import { Formik, Form, Field } from "formik";
 import {
   deleteActivity,
   activitiesSelector,
@@ -8,6 +7,11 @@ import {
 import { useDispatch, useSelector } from "react-redux";
 import initialValue, { DeleteActivityValues } from "./initialValues";
 import validationSchema from "./validationSchema";
+import Form from "../components/Form/Form";
+import Submit from "../components/Submit/Submit";
+import TextField from "../components/TextField/TextField";
+import { FormikProps } from "formik";
+import "./DeleteActivity.css";
 
 const DeleteActivity: React.FC = (): JSX.Element => {
   const dispatch = useDispatch();
@@ -19,36 +23,36 @@ const DeleteActivity: React.FC = (): JSX.Element => {
     }
   };
 
+  const handleError = (values: FormikProps<DeleteActivityValues>) => {
+    return Object.values(values.errors).map((error: string) => (
+      <p key={error}>{error}</p>
+    ));
+  };
+
   return (
-    <Formik
+    <Form
+      title="Delete Activity"
       initialValues={initialValue}
-      onSubmit={handleSubmit}
+      handleError={handleError}
+      handleSubmit={handleSubmit}
+      variant="primary"
       validationSchema={validationSchema}
+      className="form-delete"
     >
-      {(values) => (
-        <Form>
-          <div>
-            <label htmlFor="id">Id</label>
-            <Field
-              data-testid="id-field-delete-activity"
-              type="text"
-              id="id"
-              name="id"
-              placeholder="Id"
-              pattern="[0-9]*"
-            />
-          </div>
-          <input
-            data-testid="delete-button-delete-activity"
-            type="submit"
-            value="Delete"
-          />
-          {Object.values(values.errors).map((error: string) => (
-            <p key={error}>{error}</p>
-          ))}
-        </Form>
-      )}
-    </Formik>
+      <div>
+        <TextField
+          id="id"
+          name="id"
+          variant="secondary"
+          type="numbers"
+          labelText="Id"
+          placeholder="Insert Id"
+        />
+        <Submit className="delete-submit" variant="primary">
+          Delete
+        </Submit>
+      </div>
+    </Form>
   );
 };
 

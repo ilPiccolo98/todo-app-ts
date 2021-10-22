@@ -9,7 +9,10 @@ const meta: Meta = {
   component: Form,
   argTypes: {
     initialValues: {
-      defaultValue: {},
+      defaultValue: {
+        name: "",
+        surname: "",
+      },
     },
     children: {
       defaultValue: <div></div>,
@@ -32,11 +35,16 @@ const Template: Story<FormProps> = (args) => <Form {...args} />;
 
 export const Primary = Template.bind({});
 Primary.args = {
-  initialValues: {},
+  initialValues: {
+    name: "",
+    surname: "",
+  },
   children: (
     <div>
       <div style={{ float: "left" }}>
         <TextField
+          id="name"
+          name="name"
           type="text"
           variant="secondary"
           labelText="Name"
@@ -45,6 +53,8 @@ Primary.args = {
       </div>
       <div style={{ float: "right" }}>
         <TextField
+          id="surname"
+          name="surname"
           type="text"
           variant="secondary"
           labelText="Surname"
@@ -67,11 +77,16 @@ Primary.args = {
 
 export const Secondary = Template.bind({});
 Secondary.args = {
-  initialValues: {},
+  initialValues: {
+    name: "",
+    surname: "",
+  },
   children: (
     <div>
       <div style={{ float: "left" }}>
         <TextField
+          id="name"
+          name="name"
           type="text"
           variant="primary"
           labelText="Name"
@@ -80,6 +95,8 @@ Secondary.args = {
       </div>
       <div style={{ float: "right" }}>
         <TextField
+          id="surname"
+          name="surname"
           type="text"
           variant="primary"
           labelText="Surname"

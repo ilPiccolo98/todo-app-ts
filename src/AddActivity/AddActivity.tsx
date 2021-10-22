@@ -33,6 +33,7 @@ export const AddActivity: React.FC<AddActivityProps> = (): JSX.Element => {
 
   return (
     <Form
+      title="Add Activity"
       initialValues={initialValue}
       handleSubmit={handleSubmit}
       validationSchema={validationSchema}
