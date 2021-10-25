@@ -10,14 +10,26 @@ export interface CheckBoxProps extends HTMLAttributes<HTMLInputElement> {
   name?: string;
   /**Value that the checkbox should have */
   value?: any;
+  /**If the Checkbox is checked or not*/
+  checked?: boolean;
+  /**Id for testing */
+  datatestid?: string;
 }
 
 /**Checkbox of the todo-app */
 export const CheckBox: React.FC<CheckBoxProps> = ({ ...props }) => {
   return (
-    <span className={`${props.variant}-checkbox`}>
+    <span
+      className={`${props.variant}-checkbox`}
+      data-testid={props.datatestid}
+    >
       <label htmlFor={props.id}>
-        <input {...props} type="checkbox" name={props.name} />
+        <input
+          {...props}
+          type="checkbox"
+          name={props.name}
+          checked={props.checked}
+        />
         {props.label}
       </label>
     </span>

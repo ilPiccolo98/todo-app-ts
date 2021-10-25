@@ -6,6 +6,8 @@ export interface SubmitProps extends HTMLAttributes<HTMLInputElement> {
   children: string;
   /**Which style should it use */
   variant: "primary" | "secondary" | "tertiary";
+  /**Id for testing */
+  datatestid?: string;
 }
 
 /**Submit component for the todo-app */
@@ -20,6 +22,7 @@ export const Submit: React.FC<SubmitProps> = ({
       className={`submit ${variant}-submit ${props.className}`}
       type={"submit"}
       value={children}
+      data-testid={props.datatestid}
     />
   );
 };

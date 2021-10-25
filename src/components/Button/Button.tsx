@@ -6,6 +6,8 @@ export interface ButtonProps extends HTMLAttributes<HTMLButtonElement> {
   variant: "primary" | "secondary" | "tertiary";
   /**It provides the text to display */
   children: ReactNode;
+  /**Id for testing */
+  datatestid?: string;
 }
 
 /**Button component for the todo-app-ts */
@@ -17,6 +19,7 @@ export const Button: React.FC<ButtonProps> = ({
     <button
       {...props}
       className={`button ${props.variant}-button ${props.className}`}
+      data-testid={props.datatestid}
     >
       {children}
     </button>

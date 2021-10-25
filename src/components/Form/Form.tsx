@@ -8,6 +8,8 @@ export interface FormProps extends HTMLAttributes<HTMLFormElement> {
   title?: string;
   /**Which style it should use */
   variant: "primary" | "secondary";
+  /**Id for testing */
+  datatestid?: string;
 }
 
 /**Generic Form of the todo-app  */
@@ -18,7 +20,10 @@ export const Form: React.FC<FormProps> = ({
   ...props
 }): JSX.Element => {
   return (
-    <div className={`form ${variant}-form ${props.className}`}>
+    <div
+      className={`form ${variant}-form ${props.className}`}
+      data-testid={props.datatestid}
+    >
       <p>
         <b>{title}</b>
       </p>

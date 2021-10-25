@@ -12,6 +12,8 @@ export interface TextFieldProps extends HTMLAttributes<HTMLInputElement> {
   name?: string;
   /**Value that should be content in the Textfield */
   value?: any;
+  /**Id for testing */
+  datatestid?: string;
 }
 
 /**TextField of the todo-app application */
@@ -31,7 +33,10 @@ export const TextField: React.FC<TextFieldProps> = ({
   };
 
   return (
-    <div className={`${props.variant}-container`}>
+    <div
+      data-testid={props.datatestid}
+      className={`${props.variant}-container`}
+    >
       <label htmlFor={props.id}>
         <p className={`${props.variant}-label`}>
           <b>{labelText}</b>

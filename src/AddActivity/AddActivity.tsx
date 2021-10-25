@@ -27,7 +27,6 @@ export const AddActivity: React.FC<AddActivityProps> = (): JSX.Element => {
       );
     },
   });
-
   return (
     <Form
       title="Add Activity"
@@ -38,6 +37,7 @@ export const AddActivity: React.FC<AddActivityProps> = (): JSX.Element => {
       <div>
         <div className="float-left">
           <TextField
+            datatestid="name-addActivity"
             id="name"
             name="name"
             labelText="Name"
@@ -50,6 +50,7 @@ export const AddActivity: React.FC<AddActivityProps> = (): JSX.Element => {
         </div>
         <div className="float-right">
           <TextField
+            datatestid="description-addActivity"
             id="description"
             name="description"
             labelText="Description"
@@ -62,6 +63,7 @@ export const AddActivity: React.FC<AddActivityProps> = (): JSX.Element => {
         </div>
         <div className="status">
           <CheckBox
+            datatestid="status-addActivity"
             id="status"
             name="status"
             variant="secondary"
@@ -70,7 +72,12 @@ export const AddActivity: React.FC<AddActivityProps> = (): JSX.Element => {
             value={formik.values.status}
           />
         </div>
-        <Submit className="submit-button" id="submit" variant="primary">
+        <Submit
+          datatestid="submit-addActivity"
+          className="submit-button"
+          id="submit"
+          variant="primary"
+        >
           Add
         </Submit>
       </div>
