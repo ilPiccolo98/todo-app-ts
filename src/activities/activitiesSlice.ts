@@ -117,8 +117,11 @@ const activitiesSlice = createSlice({
   },
 });
 
-export const { addActivity, deleteActivity, updateActivity } =
-  activitiesSlice.actions;
+export const {
+  addActivity,
+  deleteActivity,
+  updateActivity,
+} = activitiesSlice.actions;
 
 export const activitiesSelector = (state: RootState) => state.activities;
 
