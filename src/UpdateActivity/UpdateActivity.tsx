@@ -16,7 +16,9 @@ import CheckBox from "../components/CheckBox/CheckBox";
 import "./UpdateActivity.css";
 import { useFormik } from "formik";
 
-const UpdateActivity: React.FC = (): JSX.Element => {
+export interface UpdateActivityProps {}
+
+export const UpdateActivity: React.FC<UpdateActivityProps> = (): JSX.Element => {
   const dispatch = useDispatch();
   const formik = useFormik({
     initialValues,
@@ -48,6 +50,7 @@ const UpdateActivity: React.FC = (): JSX.Element => {
       <div>
         <div className="float-left">
           <TextField
+            datatestid="id-updateActivity"
             labelText="Id"
             id="id"
             name="id"
@@ -60,6 +63,7 @@ const UpdateActivity: React.FC = (): JSX.Element => {
         </div>
         <div className="float-right">
           <TextField
+            datatestid="name-updateActivity"
             labelText="Name"
             id="name"
             name="name"
@@ -72,6 +76,7 @@ const UpdateActivity: React.FC = (): JSX.Element => {
         </div>
         <div className="float-left description-style">
           <TextField
+            datatestid="description-updateActivity"
             labelText="Description"
             id="description"
             name="description"
@@ -84,6 +89,7 @@ const UpdateActivity: React.FC = (): JSX.Element => {
         </div>
         <div className="checkbox-status-update">
           <CheckBox
+            datatestid="status-updateActivity"
             className="checkbox-status-update"
             id="status"
             name="status"
@@ -93,7 +99,11 @@ const UpdateActivity: React.FC = (): JSX.Element => {
             value={formik.values.status}
           />
         </div>
-        <Submit className="update-button" variant="primary">
+        <Submit
+          datatestid="submit-updateActivity"
+          className="update-button"
+          variant="primary"
+        >
           Update
         </Submit>
       </div>

@@ -9,20 +9,22 @@ const TableActivities: React.FC = (): JSX.Element => {
     activitiesSelector
   );
   const generateBodyTable = (activities: Array<Activity>): JSX.Element[] => {
-    return activities.map((activity: Activity): JSX.Element => {
-      return (
-        <tr key={activity.id}>
-          <td>{activity.id}</td>
-          <td>{activity.name}</td>
-          <td>{activity.description}</td>
-          <td>{activity.status.toString()}</td>
-        </tr>
-      );
-    });
+    return activities.map(
+      (activity: Activity): JSX.Element => {
+        return (
+          <tr key={activity.id}>
+            <td>{activity.id}</td>
+            <td>{activity.name}</td>
+            <td>{activity.description}</td>
+            <td>{activity.status.toString()}</td>
+          </tr>
+        );
+      }
+    );
   };
 
   return (
-    <table>
+    <table data-testid="table-activities">
       <tbody>
         <tr>
           <th>Id</th>

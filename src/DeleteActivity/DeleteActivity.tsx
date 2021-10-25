@@ -13,7 +13,9 @@ import TextField from "../components/TextField/TextField";
 import "./DeleteActivity.css";
 import { useFormik } from "formik";
 
-const DeleteActivity: React.FC = (): JSX.Element => {
+export interface DeleteActivityProps {}
+
+export const DeleteActivity: React.FC<DeleteActivityProps> = (): JSX.Element => {
   const dispatch = useDispatch();
   const formik = useFormik({
     initialValues,
@@ -42,8 +44,13 @@ const DeleteActivity: React.FC = (): JSX.Element => {
         placeholder="Insert Id"
         onChange={formik.handleChange}
         value={formik.values.id}
+        datatestid="id-deleteActivity"
       />
-      <Submit className="delete-submit" variant="primary">
+      <Submit
+        datatestid="submit-deleteActivity"
+        className="delete-submit"
+        variant="primary"
+      >
         Delete
       </Submit>
     </Form>

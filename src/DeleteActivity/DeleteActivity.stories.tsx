@@ -1,19 +1,19 @@
 import React from "react";
 import { Meta, Story } from "@storybook/react";
-import { AddActivity, AddActivityProps } from "./AddActivity";
+import { DeleteActivity, DeleteActivityProps } from "./DeleteActivity";
 import store from "../activities/activitiesStore";
 import { Provider } from "react-redux";
 
 const meta: Meta = {
-  title: "AddActivity",
-  component: AddActivity,
+  title: "DeleteActivity",
+  component: DeleteActivity,
   argTypes: {},
 };
 
 export default meta;
-const Template: Story<AddActivityProps> = (args) => (
+const Template: Story<DeleteActivityProps> = (args) => (
   <Provider store={store}>
-    <AddActivity {...args} />
+    <DeleteActivity {...args} />
   </Provider>
 );
 

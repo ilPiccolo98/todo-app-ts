@@ -1,4 +1,4 @@
-import React, { MouseEvent } from "react";
+import React from "react";
 import {
   fireEvent,
   render,
@@ -76,6 +76,7 @@ describe("testing AddActivity component", () => {
       description: "activity1",
       status: true,
     });
+    expect(component).toMatchSnapshot();
   });
 
   it("should call the addActivity action once with { id: 2, name: 'activity2', description: 'activity2', status: true, } when there is only already an activity", async () => {
@@ -115,6 +116,7 @@ describe("testing AddActivity component", () => {
       description: "activity2",
       status: true,
     });
+    expect(component).toMatchSnapshot();
   });
 
   it("shouldn't call the action addActivity when the name field is blank", async () => {
@@ -134,6 +136,7 @@ describe("testing AddActivity component", () => {
     await waitFor(() => fireEvent.click(statusCheckbox));
     await waitFor(() => fireEvent.click(submit));
     expect(addActivitySpy).not.toBeCalled();
+    expect(component).toMatchSnapshot();
   });
 
   it("shouldn't call the action addActivity when the description field is blank", async () => {
@@ -151,5 +154,6 @@ describe("testing AddActivity component", () => {
     await waitFor(() => fireEvent.click(statusCheckbox));
     await waitFor(() => fireEvent.click(submit));
     expect(addActivitySpy).not.toBeCalled();
+    expect(component).toMatchSnapshot();
   });
 });

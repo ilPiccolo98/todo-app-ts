@@ -1,19 +1,19 @@
 import React from "react";
 import { Meta, Story } from "@storybook/react";
-import { AddActivity, AddActivityProps } from "./AddActivity";
+import { UpdateActivity, UpdateActivityProps } from "./UpdateActivity";
 import store from "../activities/activitiesStore";
 import { Provider } from "react-redux";
 
 const meta: Meta = {
-  title: "AddActivity",
-  component: AddActivity,
+  title: "UpdateActivity",
+  component: UpdateActivity,
   argTypes: {},
 };
 
 export default meta;
-const Template: Story<AddActivityProps> = (args) => (
+const Template: Story<UpdateActivityProps> = (args) => (
   <Provider store={store}>
-    <AddActivity {...args} />
+    <UpdateActivity {...args} />
   </Provider>
 );
 
