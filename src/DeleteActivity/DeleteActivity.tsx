@@ -12,6 +12,7 @@ import Submit from "../components/Submit/Submit";
 import TextField from "../components/TextField/TextField";
 import "./DeleteActivity.css";
 import { useFormik } from "formik";
+import MessageError from "../components/MessageError/MessageError";
 
 export interface DeleteActivityProps {}
 
@@ -53,6 +54,9 @@ export const DeleteActivity: React.FC<DeleteActivityProps> = (): JSX.Element => 
       >
         Delete
       </Submit>
+      <div className="error-id">
+        <MessageError size="medium">{formik.errors.id}</MessageError>
+      </div>
     </Form>
   );
 };

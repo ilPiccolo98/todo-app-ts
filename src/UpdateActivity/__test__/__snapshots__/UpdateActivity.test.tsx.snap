@@ -45,11 +45,15 @@ Object {
                     variant="secondary"
                   />
                 </label>
-                <p
+                <div
                   class="error"
                 >
-                  <b />
-                </p>
+                  <span
+                    class="message-error undefined small"
+                  >
+                    <b />
+                  </span>
+                </div>
               </div>
             </div>
             <div
@@ -80,11 +84,15 @@ Object {
                     variant="secondary"
                   />
                 </label>
-                <p
+                <div
                   class="error"
                 >
-                  <b />
-                </p>
+                  <span
+                    class="message-error undefined small"
+                  >
+                    <b />
+                  </span>
+                </div>
               </div>
             </div>
             <div
@@ -115,11 +123,15 @@ Object {
                     variant="secondary"
                   />
                 </label>
-                <p
+                <div
                   class="error"
                 >
-                  <b />
-                </p>
+                  <span
+                    class="message-error undefined small"
+                  >
+                    <b />
+                  </span>
+                </div>
               </div>
             </div>
             <div
@@ -153,6 +165,33 @@ Object {
               type="submit"
               value="Update"
             />
+            <div
+              class="error-id"
+            >
+              <span
+                class="message-error undefined medium"
+              >
+                <b />
+              </span>
+            </div>
+            <div
+              class="error-name"
+            >
+              <span
+                class="message-error undefined medium"
+              >
+                <b />
+              </span>
+            </div>
+            <div
+              class="error-description"
+            >
+              <span
+                class="message-error undefined medium"
+              >
+                <b />
+              </span>
+            </div>
           </div>
         </form>
       </div>
@@ -199,11 +238,15 @@ Object {
                   variant="secondary"
                 />
               </label>
-              <p
+              <div
                 class="error"
               >
-                <b />
-              </p>
+                <span
+                  class="message-error undefined small"
+                >
+                  <b />
+                </span>
+              </div>
             </div>
           </div>
           <div
@@ -234,11 +277,15 @@ Object {
                   variant="secondary"
                 />
               </label>
-              <p
+              <div
                 class="error"
               >
-                <b />
-              </p>
+                <span
+                  class="message-error undefined small"
+                >
+                  <b />
+                </span>
+              </div>
             </div>
           </div>
           <div
@@ -269,11 +316,15 @@ Object {
                   variant="secondary"
                 />
               </label>
-              <p
+              <div
                 class="error"
               >
-                <b />
-              </p>
+                <span
+                  class="message-error undefined small"
+                >
+                  <b />
+                </span>
+              </div>
             </div>
           </div>
           <div
@@ -307,6 +358,33 @@ Object {
             type="submit"
             value="Update"
           />
+          <div
+            class="error-id"
+          >
+            <span
+              class="message-error undefined medium"
+            >
+              <b />
+            </span>
+          </div>
+          <div
+            class="error-name"
+          >
+            <span
+              class="message-error undefined medium"
+            >
+              <b />
+            </span>
+          </div>
+          <div
+            class="error-description"
+          >
+            <span
+              class="message-error undefined medium"
+            >
+              <b />
+            </span>
+          </div>
         </div>
       </form>
     </div>
@@ -410,11 +488,15 @@ Object {
                     variant="secondary"
                   />
                 </label>
-                <p
+                <div
                   class="error"
                 >
-                  <b />
-                </p>
+                  <span
+                    class="message-error undefined small"
+                  >
+                    <b />
+                  </span>
+                </div>
               </div>
             </div>
             <div
@@ -445,11 +527,15 @@ Object {
                     variant="secondary"
                   />
                 </label>
-                <p
+                <div
                   class="error"
                 >
-                  <b />
-                </p>
+                  <span
+                    class="message-error undefined small"
+                  >
+                    <b />
+                  </span>
+                </div>
               </div>
             </div>
             <div
@@ -480,11 +566,15 @@ Object {
                     variant="secondary"
                   />
                 </label>
-                <p
+                <div
                   class="error"
                 >
-                  <b />
-                </p>
+                  <span
+                    class="message-error undefined small"
+                  >
+                    <b />
+                  </span>
+                </div>
               </div>
             </div>
             <div
@@ -518,6 +608,33 @@ Object {
               type="submit"
               value="Update"
             />
+            <div
+              class="error-id"
+            >
+              <span
+                class="message-error undefined medium"
+              >
+                <b />
+              </span>
+            </div>
+            <div
+              class="error-name"
+            >
+              <span
+                class="message-error undefined medium"
+              >
+                <b />
+              </span>
+            </div>
+            <div
+              class="error-description"
+            >
+              <span
+                class="message-error undefined medium"
+              >
+                <b />
+              </span>
+            </div>
           </div>
         </form>
       </div>
@@ -564,11 +681,15 @@ Object {
                   variant="secondary"
                 />
               </label>
-              <p
+              <div
                 class="error"
               >
-                <b />
-              </p>
+                <span
+                  class="message-error undefined small"
+                >
+                  <b />
+                </span>
+              </div>
             </div>
           </div>
           <div
@@ -599,11 +720,15 @@ Object {
                   variant="secondary"
                 />
               </label>
-              <p
+              <div
                 class="error"
               >
-                <b />
-              </p>
+                <span
+                  class="message-error undefined small"
+                >
+                  <b />
+                </span>
+              </div>
             </div>
           </div>
           <div
@@ -634,11 +759,15 @@ Object {
                   variant="secondary"
                 />
               </label>
-              <p
+              <div
                 class="error"
               >
-                <b />
-              </p>
+                <span
+                  class="message-error undefined small"
+                >
+                  <b />
+                </span>
+              </div>
             </div>
           </div>
           <div
@@ -672,6 +801,33 @@ Object {
             type="submit"
             value="Update"
           />
+          <div
+            class="error-id"
+          >
+            <span
+              class="message-error undefined medium"
+            >
+              <b />
+            </span>
+          </div>
+          <div
+            class="error-name"
+          >
+            <span
+              class="message-error undefined medium"
+            >
+              <b />
+            </span>
+          </div>
+          <div
+            class="error-description"
+          >
+            <span
+              class="message-error undefined medium"
+            >
+              <b />
+            </span>
+          </div>
         </div>
       </form>
     </div>

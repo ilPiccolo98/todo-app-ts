@@ -24,11 +24,15 @@ Object {
             variant="primary"
           />
         </label>
-        <p
+        <div
           class="error"
         >
-          <b />
-        </p>
+          <span
+            class="message-error undefined small"
+          >
+            <b />
+          </span>
+        </div>
       </div>
     </div>
   </body>,
@@ -52,11 +56,15 @@ Object {
           variant="primary"
         />
       </label>
-      <p
+      <div
         class="error"
       >
-        <b />
-      </p>
+        <span
+          class="message-error undefined small"
+        >
+          <b />
+        </span>
+      </div>
     </div>
   </div>,
   "debug": [Function],
@@ -137,11 +145,15 @@ Object {
             variant="primary"
           />
         </label>
-        <p
+        <div
           class="error"
         >
-          <b />
-        </p>
+          <span
+            class="message-error undefined small"
+          >
+            <b />
+          </span>
+        </div>
       </div>
     </div>
   </body>,
@@ -165,11 +177,15 @@ Object {
           variant="primary"
         />
       </label>
-      <p
+      <div
         class="error"
       >
-        <b />
-      </p>
+        <span
+          class="message-error undefined small"
+        >
+          <b />
+        </span>
+      </div>
     </div>
   </div>,
   "debug": [Function],
@@ -250,11 +266,15 @@ Object {
             variant="primary"
           />
         </label>
-        <p
+        <div
           class="error"
         >
-          <b />
-        </p>
+          <span
+            class="message-error undefined small"
+          >
+            <b />
+          </span>
+        </div>
       </div>
     </div>
   </body>,
@@ -278,11 +298,15 @@ Object {
           variant="primary"
         />
       </label>
-      <p
+      <div
         class="error"
       >
-        <b />
-      </p>
+        <span
+          class="message-error undefined small"
+        >
+          <b />
+        </span>
+      </div>
     </div>
   </div>,
   "debug": [Function],
@@ -363,13 +387,17 @@ Object {
             variant="primary"
           />
         </label>
-        <p
+        <div
           class="error"
         >
-          <b>
-            Text is not allowed
-          </b>
-        </p>
+          <span
+            class="message-error undefined small"
+          >
+            <b>
+              Text is not allowed
+            </b>
+          </span>
+        </div>
       </div>
     </div>
   </body>,
@@ -393,13 +421,17 @@ Object {
           variant="primary"
         />
       </label>
-      <p
+      <div
         class="error"
       >
-        <b>
-          Text is not allowed
-        </b>
-      </p>
+        <span
+          class="message-error undefined small"
+        >
+          <b>
+            Text is not allowed
+          </b>
+        </span>
+      </div>
     </div>
   </div>,
   "debug": [Function],
@@ -480,11 +512,15 @@ Object {
             variant="primary"
           />
         </label>
-        <p
+        <div
           class="error"
         >
-          <b />
-        </p>
+          <span
+            class="message-error undefined small"
+          >
+            <b />
+          </span>
+        </div>
       </div>
     </div>
   </body>,
@@ -508,11 +544,15 @@ Object {
           variant="primary"
         />
       </label>
-      <p
+      <div
         class="error"
       >
-        <b />
-      </p>
+        <span
+          class="message-error undefined small"
+        >
+          <b />
+        </span>
+      </div>
     </div>
   </div>,
   "debug": [Function],

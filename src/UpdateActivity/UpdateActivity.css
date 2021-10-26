@@ -23,3 +23,21 @@
 .update-button {
   margin-top: 15px;
 }
+
+.error-id {
+  position: relative;
+  left: 35%;
+  margin-top: 10px;
+}
+
+.error-name {
+  position: relative;
+  left: 33%;
+  margin-top: 10px;
+}
+
+.error-description {
+  position: relative;
+  left: 27%;
+  margin-top: 10px;
+}

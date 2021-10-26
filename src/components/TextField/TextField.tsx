@@ -1,5 +1,6 @@
 import React, { HTMLAttributes, KeyboardEvent, useState } from "react";
 import "./TextField.css";
+import MessageError from "../MessageError/MessageError";
 
 export interface TextFieldProps extends HTMLAttributes<HTMLInputElement> {
   /**Which style the TextField component should have */
@@ -48,9 +49,9 @@ export const TextField: React.FC<TextFieldProps> = ({
           name={props.name}
         />
       </label>
-      <p className="error">
-        <b>{messageError}</b>
-      </p>
+      <div className="error">
+        <MessageError size="small">{messageError}</MessageError>
+      </div>
     </div>
   );
 };

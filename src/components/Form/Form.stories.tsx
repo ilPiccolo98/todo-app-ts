@@ -16,6 +16,9 @@ const meta: Meta = {
         e.preventDefault();
       },
     },
+    onClick: {
+      action: "Clicked",
+    },
     title: {
       defaultValue: "Form component",
     },

@@ -12,6 +12,9 @@ const meta: Meta = {
     variant: {
       defaultValue: "primary",
     },
+    onChange: {
+      action: "changed",
+    },
   },
 };
 

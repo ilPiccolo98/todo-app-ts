@@ -15,6 +15,7 @@ import TextField from "../components/TextField/TextField";
 import CheckBox from "../components/CheckBox/CheckBox";
 import "./UpdateActivity.css";
 import { useFormik } from "formik";
+import MessageError from "../components/MessageError/MessageError";
 
 export interface UpdateActivityProps {}
 
@@ -106,6 +107,15 @@ export const UpdateActivity: React.FC<UpdateActivityProps> = (): JSX.Element => 
         >
           Update
         </Submit>
+        <div className="error-id">
+          <MessageError size="medium">{formik.errors.id}</MessageError>
+        </div>
+        <div className="error-name">
+          <MessageError size="medium">{formik.errors.name}</MessageError>
+        </div>
+        <div className="error-description">
+          <MessageError size="medium">{formik.errors.description}</MessageError>
+        </div>
       </div>
     </Form>
   );

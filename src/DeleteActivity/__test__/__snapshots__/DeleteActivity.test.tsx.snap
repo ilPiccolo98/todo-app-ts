@@ -41,11 +41,15 @@ Object {
                 variant="secondary"
               />
             </label>
-            <p
+            <div
               class="error"
             >
-              <b />
-            </p>
+              <span
+                class="message-error undefined small"
+              >
+                <b />
+              </span>
+            </div>
           </div>
           <input
             class="submit primary-submit delete-submit"
@@ -54,6 +58,15 @@ Object {
             type="submit"
             value="Delete"
           />
+          <div
+            class="error-id"
+          >
+            <span
+              class="message-error undefined medium"
+            >
+              <b />
+            </span>
+          </div>
         </form>
       </div>
     </div>
@@ -95,11 +108,15 @@ Object {
               variant="secondary"
             />
           </label>
-          <p
+          <div
             class="error"
           >
-            <b />
-          </p>
+            <span
+              class="message-error undefined small"
+            >
+              <b />
+            </span>
+          </div>
         </div>
         <input
           class="submit primary-submit delete-submit"
@@ -108,6 +125,15 @@ Object {
           type="submit"
           value="Delete"
         />
+        <div
+          class="error-id"
+        >
+          <span
+            class="message-error undefined medium"
+          >
+            <b />
+          </span>
+        </div>
       </form>
     </div>
   </div>,
@@ -206,11 +232,15 @@ Object {
                 variant="secondary"
               />
             </label>
-            <p
+            <div
               class="error"
             >
-              <b />
-            </p>
+              <span
+                class="message-error undefined small"
+              >
+                <b />
+              </span>
+            </div>
           </div>
           <input
             class="submit primary-submit delete-submit"
@@ -219,6 +249,17 @@ Object {
             type="submit"
             value="Delete"
           />
+          <div
+            class="error-id"
+          >
+            <span
+              class="message-error undefined medium"
+            >
+              <b>
+                Id is required
+              </b>
+            </span>
+          </div>
         </form>
       </div>
     </div>
@@ -260,11 +301,15 @@ Object {
               variant="secondary"
             />
           </label>
-          <p
+          <div
             class="error"
           >
-            <b />
-          </p>
+            <span
+              class="message-error undefined small"
+            >
+              <b />
+            </span>
+          </div>
         </div>
         <input
           class="submit primary-submit delete-submit"
@@ -273,6 +318,17 @@ Object {
           type="submit"
           value="Delete"
         />
+        <div
+          class="error-id"
+        >
+          <span
+            class="message-error undefined medium"
+          >
+            <b>
+              Id is required
+            </b>
+          </span>
+        </div>
       </form>
     </div>
   </div>,
@@ -371,11 +427,15 @@ Object {
                 variant="secondary"
               />
             </label>
-            <p
+            <div
               class="error"
             >
-              <b />
-            </p>
+              <span
+                class="message-error undefined small"
+              >
+                <b />
+              </span>
+            </div>
           </div>
           <input
             class="submit primary-submit delete-submit"
@@ -384,6 +444,15 @@ Object {
             type="submit"
             value="Delete"
           />
+          <div
+            class="error-id"
+          >
+            <span
+              class="message-error undefined medium"
+            >
+              <b />
+            </span>
+          </div>
         </form>
       </div>
     </div>
@@ -425,11 +494,15 @@ Object {
               variant="secondary"
             />
           </label>
-          <p
+          <div
             class="error"
           >
-            <b />
-          </p>
+            <span
+              class="message-error undefined small"
+            >
+              <b />
+            </span>
+          </div>
         </div>
         <input
           class="submit primary-submit delete-submit"
@@ -438,6 +511,15 @@ Object {
           type="submit"
           value="Delete"
         />
+        <div
+          class="error-id"
+        >
+          <span
+            class="message-error undefined medium"
+          >
+            <b />
+          </span>
+        </div>
       </form>
     </div>
   </div>,

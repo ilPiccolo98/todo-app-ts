@@ -1,4 +1,4 @@
-import React from "react";
+import React, { HTMLAttributes } from "react";
 import { useDispatch } from "react-redux";
 import initialValues from "./initialValues";
 import { addActivity } from "../activities/activitiesSlice";
@@ -8,9 +8,10 @@ import TextField from "../components/TextField/TextField";
 import { useFormik } from "formik";
 import Submit from "../components/Submit/Submit";
 import CheckBox from "../components/CheckBox/CheckBox";
+import MessageError from "../components/MessageError/MessageError";
 import "./AddActivity.css";
 
-export interface AddActivityProps {}
+export interface AddActivityProps extends HTMLAttributes<HTMLFormElement> {}
 
 export const AddActivity: React.FC<AddActivityProps> = (): JSX.Element => {
   const dispatch = useDispatch();
@@ -80,6 +81,12 @@ export const AddActivity: React.FC<AddActivityProps> = (): JSX.Element => {
         >
           Add
         </Submit>
+        <div className="error-name">
+          <MessageError size="medium">{formik.errors.name}</MessageError>
+        </div>
+        <div className="error-description">
+          <MessageError size="medium">{formik.errors.description}</MessageError>
+        </div>
       </div>
     </Form>
   );

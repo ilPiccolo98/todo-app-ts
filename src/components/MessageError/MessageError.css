@@ -1,0 +1,16 @@
+.message-error {
+  color: red;
+  background-color: #f2ced3;
+}
+
+.small {
+  font-size: small;
+}
+
+.medium {
+  font-size: medium;
+}
+
+.large {
+  font-size: large;
+}

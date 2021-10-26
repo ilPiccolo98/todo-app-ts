@@ -1,0 +1,1304 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots AddActivity Default 1`] = `
+<div
+  className="form primary-form form-style"
+>
+  <p>
+    <b>
+      Add Activity
+    </b>
+  </p>
+  <form
+    className=""
+    onSubmit={[Function]}
+  >
+    <div>
+      <div
+        className="float-left"
+      >
+        <div
+          className="secondary-container"
+          data-testid="name-addActivity"
+        >
+          <label
+            htmlFor="name"
+          >
+            <p
+              className="secondary-label"
+            >
+              <b>
+                Name
+              </b>
+            </p>
+            <input
+              className="textField undefined"
+              datatestid="name-addActivity"
+              id="name"
+              name="name"
+              onChange={[Function]}
+              onKeyPress={[Function]}
+              placeholder="Insert name"
+              type="text"
+              value=""
+              variant="secondary"
+            />
+          </label>
+          <div
+            className="error"
+          >
+            <span
+              className="message-error undefined small"
+            >
+              <b>
+                
+              </b>
+            </span>
+          </div>
+        </div>
+      </div>
+      <div
+        className="float-right"
+      >
+        <div
+          className="secondary-container"
+          data-testid="description-addActivity"
+        >
+          <label
+            htmlFor="description"
+          >
+            <p
+              className="secondary-label"
+            >
+              <b>
+                Description
+              </b>
+            </p>
+            <input
+              className="textField undefined"
+              datatestid="description-addActivity"
+              id="description"
+              name="description"
+              onChange={[Function]}
+              onKeyPress={[Function]}
+              placeholder="Insert description"
+              type="text"
+              value=""
+              variant="secondary"
+            />
+          </label>
+          <div
+            className="error"
+          >
+            <span
+              className="message-error undefined small"
+            >
+              <b>
+                
+              </b>
+            </span>
+          </div>
+        </div>
+      </div>
+      <div
+        className="status"
+      >
+        <span
+          className="secondary-checkbox"
+          data-testid="status-addActivity"
+        >
+          <label
+            htmlFor="status"
+          >
+            <input
+              datatestid="status-addActivity"
+              id="status"
+              label="Status"
+              name="status"
+              onChange={[Function]}
+              type="checkbox"
+              value={false}
+              variant="secondary"
+            />
+            Status
+          </label>
+        </span>
+      </div>
+      <input
+        className="submit primary-submit submit-button"
+        data-testid="submit-addActivity"
+        datatestid="submit-addActivity"
+        id="submit"
+        type="submit"
+        value="Add"
+      />
+      <div
+        className="error-name"
+      >
+        <span
+          className="message-error undefined medium"
+        >
+          <b />
+        </span>
+      </div>
+      <div
+        className="error-description"
+      >
+        <span
+          className="message-error undefined medium"
+        >
+          <b />
+        </span>
+      </div>
+    </div>
+  </form>
+</div>
+`;
+
+exports[`Storyshots Button Primary 1`] = `
+<button
+  className="button primary-button undefined"
+  variant="primary"
+>
+  primary text
+</button>
+`;
+
+exports[`Storyshots Button Secondary 1`] = `
+<button
+  className="button secondary-button undefined"
+  variant="secondary"
+>
+  secondary text
+</button>
+`;
+
+exports[`Storyshots Button Tertiary 1`] = `
+<button
+  className="button tertiary-button undefined"
+  variant="tertiary"
+>
+  tertiary text
+</button>
+`;
+
+exports[`Storyshots CheckBox Primary 1`] = `
+<span
+  className="primary-checkbox"
+>
+  <label>
+    <input
+      label="Primary"
+      type="checkbox"
+      variant="primary"
+    />
+    Primary
+  </label>
+</span>
+`;
+
+exports[`Storyshots CheckBox Secondary 1`] = `
+<span
+  className="secondary-checkbox"
+>
+  <label>
+    <input
+      label="Secondary"
+      type="checkbox"
+      variant="secondary"
+    />
+    Secondary
+  </label>
+</span>
+`;
+
+exports[`Storyshots DeleteActivity Default 1`] = `
+<div
+  className="form primary-form form-delete"
+>
+  <p>
+    <b>
+      Delete Activity
+    </b>
+  </p>
+  <form
+    className=""
+    onSubmit={[Function]}
+  >
+    <div
+      className="secondary-container"
+      data-testid="id-deleteActivity"
+    >
+      <label
+        htmlFor="id"
+      >
+        <p
+          className="secondary-label"
+        >
+          <b>
+            Id
+          </b>
+        </p>
+        <input
+          className="textField undefined"
+          datatestid="id-deleteActivity"
+          id="id"
+          name="id"
+          onChange={[Function]}
+          onKeyPress={[Function]}
+          placeholder="Insert Id"
+          type="numbers"
+          value=""
+          variant="secondary"
+        />
+      </label>
+      <div
+        className="error"
+      >
+        <span
+          className="message-error undefined small"
+        >
+          <b>
+            
+          </b>
+        </span>
+      </div>
+    </div>
+    <input
+      className="submit primary-submit delete-submit"
+      data-testid="submit-deleteActivity"
+      datatestid="submit-deleteActivity"
+      type="submit"
+      value="Delete"
+    />
+    <div
+      className="error-id"
+    >
+      <span
+        className="message-error undefined medium"
+      >
+        <b />
+      </span>
+    </div>
+  </form>
+</div>
+`;
+
+exports[`Storyshots Example/Button Large 1`] = `
+<button
+  className="storybook-button storybook-button--large storybook-button--secondary"
+  style={
+    Object {
+      "backgroundColor": undefined,
+    }
+  }
+  type="button"
+>
+  Button
+</button>
+`;
+
+exports[`Storyshots Example/Button Primary 1`] = `
+<button
+  className="storybook-button storybook-button--medium storybook-button--primary"
+  style={
+    Object {
+      "backgroundColor": undefined,
+    }
+  }
+  type="button"
+>
+  Button
+</button>
+`;
+
+exports[`Storyshots Example/Button Secondary 1`] = `
+<button
+  className="storybook-button storybook-button--medium storybook-button--secondary"
+  style={
+    Object {
+      "backgroundColor": undefined,
+    }
+  }
+  type="button"
+>
+  Button
+</button>
+`;
+
+exports[`Storyshots Example/Button Small 1`] = `
+<button
+  className="storybook-button storybook-button--small storybook-button--secondary"
+  style={
+    Object {
+      "backgroundColor": undefined,
+    }
+  }
+  type="button"
+>
+  Button
+</button>
+`;
+
+exports[`Storyshots Example/Header Logged In 1`] = `
+<header>
+  <div
+    className="wrapper"
+  >
+    <div>
+      <svg
+        height="32"
+        viewBox="0 0 32 32"
+        width="32"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <g
+          fill="none"
+          fillRule="evenodd"
+        >
+          <path
+            d="M10 0h12a10 10 0 0110 10v12a10 10 0 01-10 10H10A10 10 0 010 22V10A10 10 0 0110 0z"
+            fill="#FFF"
+          />
+          <path
+            d="M5.3 10.6l10.4 6v11.1l-10.4-6v-11zm11.4-6.2l9.7 5.5-9.7 5.6V4.4z"
+            fill="#555AB9"
+          />
+          <path
+            d="M27.2 10.6v11.2l-10.5 6V16.5l10.5-6zM15.7 4.4v11L6 10l9.7-5.5z"
+            fill="#91BAF8"
+          />
+        </g>
+      </svg>
+      <h1>
+        Acme
+      </h1>
+    </div>
+    <div>
+      <button
+        className="storybook-button storybook-button--small storybook-button--secondary"
+        style={
+          Object {
+            "backgroundColor": undefined,
+          }
+        }
+        type="button"
+      >
+        Log out
+      </button>
+    </div>
+  </div>
+</header>
+`;
+
+exports[`Storyshots Example/Header Logged Out 1`] = `
+<header>
+  <div
+    className="wrapper"
+  >
+    <div>
+      <svg
+        height="32"
+        viewBox="0 0 32 32"
+        width="32"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <g
+          fill="none"
+          fillRule="evenodd"
+        >
+          <path
+            d="M10 0h12a10 10 0 0110 10v12a10 10 0 01-10 10H10A10 10 0 010 22V10A10 10 0 0110 0z"
+            fill="#FFF"
+          />
+          <path
+            d="M5.3 10.6l10.4 6v11.1l-10.4-6v-11zm11.4-6.2l9.7 5.5-9.7 5.6V4.4z"
+            fill="#555AB9"
+          />
+          <path
+            d="M27.2 10.6v11.2l-10.5 6V16.5l10.5-6zM15.7 4.4v11L6 10l9.7-5.5z"
+            fill="#91BAF8"
+          />
+        </g>
+      </svg>
+      <h1>
+        Acme
+      </h1>
+    </div>
+    <div>
+      <button
+        className="storybook-button storybook-button--small storybook-button--secondary"
+        style={
+          Object {
+            "backgroundColor": undefined,
+          }
+        }
+        type="button"
+      >
+        Log in
+      </button>
+      <button
+        className="storybook-button storybook-button--small storybook-button--primary"
+        style={
+          Object {
+            "backgroundColor": undefined,
+          }
+        }
+        type="button"
+      >
+        Sign up
+      </button>
+    </div>
+  </div>
+</header>
+`;
+
+exports[`Storyshots Example/Page Logged In 1`] = `
+<article>
+  <header>
+    <div
+      className="wrapper"
+    >
+      <div>
+        <svg
+          height="32"
+          viewBox="0 0 32 32"
+          width="32"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g
+            fill="none"
+            fillRule="evenodd"
+          >
+            <path
+              d="M10 0h12a10 10 0 0110 10v12a10 10 0 01-10 10H10A10 10 0 010 22V10A10 10 0 0110 0z"
+              fill="#FFF"
+            />
+            <path
+              d="M5.3 10.6l10.4 6v11.1l-10.4-6v-11zm11.4-6.2l9.7 5.5-9.7 5.6V4.4z"
+              fill="#555AB9"
+            />
+            <path
+              d="M27.2 10.6v11.2l-10.5 6V16.5l10.5-6zM15.7 4.4v11L6 10l9.7-5.5z"
+              fill="#91BAF8"
+            />
+          </g>
+        </svg>
+        <h1>
+          Acme
+        </h1>
+      </div>
+      <div>
+        <button
+          className="storybook-button storybook-button--small storybook-button--secondary"
+          style={
+            Object {
+              "backgroundColor": undefined,
+            }
+          }
+          type="button"
+        >
+          Log out
+        </button>
+      </div>
+    </div>
+  </header>
+  <section>
+    <h2>
+      Pages in Storybook
+    </h2>
+    <p>
+      We recommend building UIs with a
+       
+      <a
+        href="https://componentdriven.org"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        <strong>
+          component-driven
+        </strong>
+      </a>
+       
+      process starting with atomic components and ending with pages.
+    </p>
+    <p>
+      Render pages with mock data. This makes it easy to build and review page states without needing to navigate to them in your app. Here are some handy patterns for managing page data in Storybook:
+    </p>
+    <ul>
+      <li>
+        Use a higher-level connected component. Storybook helps you compose such data from the "args" of child component stories
+      </li>
+      <li>
+        Assemble data in the page component from your services. You can mock these services out using Storybook.
+      </li>
+    </ul>
+    <p>
+      Get a guided tutorial on component-driven development at
+       
+      <a
+        href="https://storybook.js.org/tutorials/"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        Storybook tutorials
+      </a>
+      . Read more in the
+       
+      <a
+        href="https://storybook.js.org/docs"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        docs
+      </a>
+      .
+    </p>
+    <div
+      className="tip-wrapper"
+    >
+      <span
+        className="tip"
+      >
+        Tip
+      </span>
+       Adjust the width of the canvas with the
+       
+      <svg
+        height="10"
+        viewBox="0 0 12 12"
+        width="10"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <g
+          fill="none"
+          fillRule="evenodd"
+        >
+          <path
+            d="M1.5 5.2h4.8c.3 0 .5.2.5.4v5.1c-.1.2-.3.3-.4.3H1.4a.5.5 0 01-.5-.4V5.7c0-.3.2-.5.5-.5zm0-2.1h6.9c.3 0 .5.2.5.4v7a.5.5 0 01-1 0V4H1.5a.5.5 0 010-1zm0-2.1h9c.3 0 .5.2.5.4v9.1a.5.5 0 01-1 0V2H1.5a.5.5 0 010-1zm4.3 5.2H2V10h3.8V6.2z"
+            fill="#999"
+            id="a"
+          />
+        </g>
+      </svg>
+      Viewports addon in the toolbar
+    </div>
+  </section>
+</article>
+`;
+
+exports[`Storyshots Example/Page Logged Out 1`] = `
+<article>
+  <header>
+    <div
+      className="wrapper"
+    >
+      <div>
+        <svg
+          height="32"
+          viewBox="0 0 32 32"
+          width="32"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g
+            fill="none"
+            fillRule="evenodd"
+          >
+            <path
+              d="M10 0h12a10 10 0 0110 10v12a10 10 0 01-10 10H10A10 10 0 010 22V10A10 10 0 0110 0z"
+              fill="#FFF"
+            />
+            <path
+              d="M5.3 10.6l10.4 6v11.1l-10.4-6v-11zm11.4-6.2l9.7 5.5-9.7 5.6V4.4z"
+              fill="#555AB9"
+            />
+            <path
+              d="M27.2 10.6v11.2l-10.5 6V16.5l10.5-6zM15.7 4.4v11L6 10l9.7-5.5z"
+              fill="#91BAF8"
+            />
+          </g>
+        </svg>
+        <h1>
+          Acme
+        </h1>
+      </div>
+      <div>
+        <button
+          className="storybook-button storybook-button--small storybook-button--secondary"
+          style={
+            Object {
+              "backgroundColor": undefined,
+            }
+          }
+          type="button"
+        >
+          Log in
+        </button>
+        <button
+          className="storybook-button storybook-button--small storybook-button--primary"
+          style={
+            Object {
+              "backgroundColor": undefined,
+            }
+          }
+          type="button"
+        >
+          Sign up
+        </button>
+      </div>
+    </div>
+  </header>
+  <section>
+    <h2>
+      Pages in Storybook
+    </h2>
+    <p>
+      We recommend building UIs with a
+       
+      <a
+        href="https://componentdriven.org"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        <strong>
+          component-driven
+        </strong>
+      </a>
+       
+      process starting with atomic components and ending with pages.
+    </p>
+    <p>
+      Render pages with mock data. This makes it easy to build and review page states without needing to navigate to them in your app. Here are some handy patterns for managing page data in Storybook:
+    </p>
+    <ul>
+      <li>
+        Use a higher-level connected component. Storybook helps you compose such data from the "args" of child component stories
+      </li>
+      <li>
+        Assemble data in the page component from your services. You can mock these services out using Storybook.
+      </li>
+    </ul>
+    <p>
+      Get a guided tutorial on component-driven development at
+       
+      <a
+        href="https://storybook.js.org/tutorials/"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        Storybook tutorials
+      </a>
+      . Read more in the
+       
+      <a
+        href="https://storybook.js.org/docs"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        docs
+      </a>
+      .
+    </p>
+    <div
+      className="tip-wrapper"
+    >
+      <span
+        className="tip"
+      >
+        Tip
+      </span>
+       Adjust the width of the canvas with the
+       
+      <svg
+        height="10"
+        viewBox="0 0 12 12"
+        width="10"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <g
+          fill="none"
+          fillRule="evenodd"
+        >
+          <path
+            d="M1.5 5.2h4.8c.3 0 .5.2.5.4v5.1c-.1.2-.3.3-.4.3H1.4a.5.5 0 01-.5-.4V5.7c0-.3.2-.5.5-.5zm0-2.1h6.9c.3 0 .5.2.5.4v7a.5.5 0 01-1 0V4H1.5a.5.5 0 010-1zm0-2.1h9c.3 0 .5.2.5.4v9.1a.5.5 0 01-1 0V2H1.5a.5.5 0 010-1zm4.3 5.2H2V10h3.8V6.2z"
+            fill="#999"
+            id="a"
+          />
+        </g>
+      </svg>
+      Viewports addon in the toolbar
+    </div>
+  </section>
+</article>
+`;
+
+exports[`Storyshots Form Primary 1`] = `
+<div
+  className="form primary-form undefined"
+>
+  <p>
+    <b>
+      Primary form
+    </b>
+  </p>
+  <form
+    className=""
+    onSubmit={[Function]}
+  >
+    <div>
+      <div
+        style={
+          Object {
+            "float": "left",
+          }
+        }
+      >
+        <div
+          className="secondary-container"
+        >
+          <label
+            htmlFor="name"
+          >
+            <p
+              className="secondary-label"
+            >
+              <b>
+                Name
+              </b>
+            </p>
+            <input
+              className="textField undefined"
+              id="name"
+              name="name"
+              onKeyPress={[Function]}
+              placeholder="Insert name"
+              type="text"
+              variant="secondary"
+            />
+          </label>
+          <div
+            className="error"
+          >
+            <span
+              className="message-error undefined small"
+            >
+              <b>
+                
+              </b>
+            </span>
+          </div>
+        </div>
+      </div>
+      <div
+        style={
+          Object {
+            "float": "right",
+          }
+        }
+      >
+        <div
+          className="secondary-container"
+        >
+          <label
+            htmlFor="surname"
+          >
+            <p
+              className="secondary-label"
+            >
+              <b>
+                Surname
+              </b>
+            </p>
+            <input
+              className="textField undefined"
+              id="surname"
+              name="surname"
+              onKeyPress={[Function]}
+              placeholder="Insert surname"
+              style={
+                Object {
+                  "float": "right",
+                }
+              }
+              type="text"
+              variant="secondary"
+            />
+          </label>
+          <div
+            className="error"
+          >
+            <span
+              className="message-error undefined small"
+            >
+              <b>
+                
+              </b>
+            </span>
+          </div>
+        </div>
+      </div>
+      <input
+        className="submit primary-submit undefined"
+        style={
+          Object {
+            "marginTop": "10px",
+          }
+        }
+        type="submit"
+        value="Submit"
+      />
+    </div>
+  </form>
+</div>
+`;
+
+exports[`Storyshots Form Secondary 1`] = `
+<div
+  className="form secondary-form undefined"
+>
+  <p>
+    <b>
+      Secondary form
+    </b>
+  </p>
+  <form
+    className=""
+    onSubmit={[Function]}
+  >
+    <div>
+      <div
+        style={
+          Object {
+            "float": "left",
+          }
+        }
+      >
+        <div
+          className="primary-container"
+        >
+          <label
+            htmlFor="name"
+          >
+            <p
+              className="primary-label"
+            >
+              <b>
+                Name
+              </b>
+            </p>
+            <input
+              className="textField undefined"
+              id="name"
+              name="name"
+              onKeyPress={[Function]}
+              placeholder="Insert name"
+              type="text"
+              variant="primary"
+            />
+          </label>
+          <div
+            className="error"
+          >
+            <span
+              className="message-error undefined small"
+            >
+              <b>
+                
+              </b>
+            </span>
+          </div>
+        </div>
+      </div>
+      <div
+        style={
+          Object {
+            "float": "right",
+          }
+        }
+      >
+        <div
+          className="primary-container"
+        >
+          <label
+            htmlFor="surname"
+          >
+            <p
+              className="primary-label"
+            >
+              <b>
+                Surname
+              </b>
+            </p>
+            <input
+              className="textField undefined"
+              id="surname"
+              name="surname"
+              onKeyPress={[Function]}
+              placeholder="Insert surname"
+              style={
+                Object {
+                  "float": "right",
+                }
+              }
+              type="text"
+              variant="primary"
+            />
+          </label>
+          <div
+            className="error"
+          >
+            <span
+              className="message-error undefined small"
+            >
+              <b>
+                
+              </b>
+            </span>
+          </div>
+        </div>
+      </div>
+      <input
+        className="submit tertiary-submit undefined"
+        style={
+          Object {
+            "marginTop": "10px",
+          }
+        }
+        type="submit"
+        value="Submit"
+      />
+    </div>
+  </form>
+</div>
+`;
+
+exports[`Storyshots MessageError Large 1`] = `
+<span
+  className="message-error undefined large"
+>
+  <b>
+    Error example
+  </b>
+</span>
+`;
+
+exports[`Storyshots MessageError Medium 1`] = `
+<span
+  className="message-error undefined medium"
+>
+  <b>
+    Error example
+  </b>
+</span>
+`;
+
+exports[`Storyshots MessageError Small 1`] = `
+<span
+  className="message-error undefined small"
+>
+  <b>
+    Error example
+  </b>
+</span>
+`;
+
+exports[`Storyshots Submit Primary 1`] = `
+<input
+  className="submit primary-submit undefined"
+  type="submit"
+  value="Primary"
+/>
+`;
+
+exports[`Storyshots Submit Secondary 1`] = `
+<input
+  className="submit secondary-submit undefined"
+  type="submit"
+  value="Secondary"
+/>
+`;
+
+exports[`Storyshots Submit Tertiary 1`] = `
+<input
+  className="submit tertiary-submit undefined"
+  type="submit"
+  value="Tertiary"
+/>
+`;
+
+exports[`Storyshots TextField Primary 1`] = `
+<div
+  className="primary-container"
+>
+  <label>
+    <p
+      className="primary-label"
+    >
+      <b>
+        primary
+      </b>
+    </p>
+    <input
+      className="textField undefined"
+      name="name"
+      onKeyPress={[Function]}
+      placeholder="primary"
+      type="text"
+      variant="primary"
+    />
+  </label>
+  <div
+    className="error"
+  >
+    <span
+      className="message-error undefined small"
+    >
+      <b>
+        
+      </b>
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Storyshots TextField Secondary 1`] = `
+<div
+  className="secondary-container"
+>
+  <label>
+    <p
+      className="secondary-label"
+    >
+      <b>
+        secondary
+      </b>
+    </p>
+    <input
+      className="textField undefined"
+      name="name"
+      onKeyPress={[Function]}
+      placeholder="secondary"
+      type="text"
+      variant="secondary"
+    />
+  </label>
+  <div
+    className="error"
+  >
+    <span
+      className="message-error undefined small"
+    >
+      <b>
+        
+      </b>
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Storyshots UpdateActivity Default 1`] = `
+<div
+  className="form primary-form update-form"
+>
+  <p>
+    <b>
+      Update Activity
+    </b>
+  </p>
+  <form
+    className=""
+    onSubmit={[Function]}
+  >
+    <div>
+      <div
+        className="float-left"
+      >
+        <div
+          className="secondary-container"
+          data-testid="id-updateActivity"
+        >
+          <label
+            htmlFor="id"
+          >
+            <p
+              className="secondary-label"
+            >
+              <b>
+                Id
+              </b>
+            </p>
+            <input
+              className="textField undefined"
+              datatestid="id-updateActivity"
+              id="id"
+              name="id"
+              onChange={[Function]}
+              onKeyPress={[Function]}
+              placeholder="Insert Id"
+              type="numbers"
+              value=""
+              variant="secondary"
+            />
+          </label>
+          <div
+            className="error"
+          >
+            <span
+              className="message-error undefined small"
+            >
+              <b>
+                
+              </b>
+            </span>
+          </div>
+        </div>
+      </div>
+      <div
+        className="float-right"
+      >
+        <div
+          className="secondary-container"
+          data-testid="name-updateActivity"
+        >
+          <label
+            htmlFor="name"
+          >
+            <p
+              className="secondary-label"
+            >
+              <b>
+                Name
+              </b>
+            </p>
+            <input
+              className="textField undefined"
+              datatestid="name-updateActivity"
+              id="name"
+              name="name"
+              onChange={[Function]}
+              onKeyPress={[Function]}
+              placeholder="Insert name"
+              type="text"
+              value=""
+              variant="secondary"
+            />
+          </label>
+          <div
+            className="error"
+          >
+            <span
+              className="message-error undefined small"
+            >
+              <b>
+                
+              </b>
+            </span>
+          </div>
+        </div>
+      </div>
+      <div
+        className="float-left description-style"
+      >
+        <div
+          className="secondary-container"
+          data-testid="description-updateActivity"
+        >
+          <label
+            htmlFor="description"
+          >
+            <p
+              className="secondary-label"
+            >
+              <b>
+                Description
+              </b>
+            </p>
+            <input
+              className="textField undefined"
+              datatestid="description-updateActivity"
+              id="description"
+              name="description"
+              onChange={[Function]}
+              onKeyPress={[Function]}
+              placeholder="Insert description"
+              type="text"
+              value=""
+              variant="secondary"
+            />
+          </label>
+          <div
+            className="error"
+          >
+            <span
+              className="message-error undefined small"
+            >
+              <b>
+                
+              </b>
+            </span>
+          </div>
+        </div>
+      </div>
+      <div
+        className="checkbox-status-update"
+      >
+        <span
+          className="secondary-checkbox"
+          data-testid="status-updateActivity"
+        >
+          <label
+            htmlFor="status"
+          >
+            <input
+              className="checkbox-status-update"
+              datatestid="status-updateActivity"
+              id="status"
+              label="Status"
+              name="status"
+              onChange={[Function]}
+              type="checkbox"
+              value={false}
+              variant="secondary"
+            />
+            Status
+          </label>
+        </span>
+      </div>
+      <input
+        className="submit primary-submit update-button"
+        data-testid="submit-updateActivity"
+        datatestid="submit-updateActivity"
+        type="submit"
+        value="Update"
+      />
+      <div
+        className="error-id"
+      >
+        <span
+          className="message-error undefined medium"
+        >
+          <b />
+        </span>
+      </div>
+      <div
+        className="error-name"
+      >
+        <span
+          className="message-error undefined medium"
+        >
+          <b />
+        </span>
+      </div>
+      <div
+        className="error-description"
+      >
+        <span
+          className="message-error undefined medium"
+        >
+          <b />
+        </span>
+      </div>
+    </div>
+  </form>
+</div>
+`;
