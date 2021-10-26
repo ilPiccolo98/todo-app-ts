@@ -11,11 +11,6 @@ const meta: Meta = {
     children: {
       defaultValue: <div></div>,
     },
-    onSubmit: {
-      defaultValue: (e: FormEvent<HTMLFormElement>) => {
-        e.preventDefault();
-      },
-    },
     onClick: {
       action: "Clicked",
     },
@@ -61,9 +56,6 @@ Primary.args = {
       />
     </div>
   ),
-  onSubmit: (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-  },
   title: "Primary form",
   variant: "primary",
 };
@@ -100,9 +92,6 @@ Secondary.args = {
       />
     </div>
   ),
-  onSubmit: (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-  },
   title: "Secondary form",
   variant: "secondary",
 };

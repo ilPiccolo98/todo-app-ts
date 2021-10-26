@@ -743,7 +743,6 @@ exports[`Storyshots Form Primary 1`] = `
   </p>
   <form
     className=""
-    onSubmit={[Function]}
   >
     <div>
       <div
@@ -863,7 +862,6 @@ exports[`Storyshots Form Secondary 1`] = `
   </p>
   <form
     className=""
-    onSubmit={[Function]}
   >
     <div>
       <div
