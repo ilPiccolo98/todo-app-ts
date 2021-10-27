@@ -9,7 +9,7 @@ import {
 import DeleteActivity from "../DeleteActivity";
 import { Provider } from "react-redux";
 import "@testing-library/jest-dom/extend-expect";
-import * as actions from "../../activities/activitiesSlice";
+import * as actions from "../../activitiesTyped/activitiesSlice";
 import store from "../../activities/activitiesStore";
 
 const renderDeleteActivity = () => {

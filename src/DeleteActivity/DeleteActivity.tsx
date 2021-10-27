@@ -1,9 +1,8 @@
 import React from "react";
 import {
-  deleteActivity,
   activitiesSelector,
-  doesActivityExist,
-} from "../activities/activitiesSlice";
+  deleteActivity,
+} from "../activitiesTyped/activitiesSlice";
 import { useDispatch, useSelector } from "react-redux";
 import initialValues from "./initialValues";
 import validationSchema from "./validationSchema";
@@ -13,6 +12,7 @@ import TextField from "../components/TextField/TextField";
 import "./DeleteActivity.css";
 import { useFormik } from "formik";
 import MessageError from "../components/MessageError/MessageError";
+import VectorActivity from "../types/classes/vectorActivity";
 
 export interface DeleteActivityProps {}
 
@@ -22,12 +22,14 @@ export const DeleteActivity: React.FC<DeleteActivityProps> = (): JSX.Element => 
     initialValues,
     validationSchema,
     onSubmit: (values) => {
-      if (doesActivityExist(activities, +values.id)) {
+      if (activities.doesActivityExist(+values.id)) {
         dispatch(deleteActivity({ id: +values.id }));
       }
     },
   });
-  const activities = useSelector(activitiesSelector);
+  const activities: VectorActivity = VectorActivity.fromArrayPlainActivityToVectorActivity(
+    useSelector(activitiesSelector)
+  );
 
   return (
     <Form
