@@ -1,8 +1,9 @@
 import getInitialState from "./initialActivities";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import VectorActivity from "../types/classes/vectorActivity";
-import Activity, { ActivityPlain } from "../types/classes/activity";
+import VectorActivity from "../types/classes/vectorActivity/vectorActivity";
+import Activity, { ActivityPlain } from "../types/classes/activity/activity";
 import { RootState } from "./activitiesStore";
+import { WritableDraft } from "immer/dist/internal";
 
 type UpdateActionParameter = {
   id: number;

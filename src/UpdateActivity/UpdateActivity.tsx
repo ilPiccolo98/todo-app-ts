@@ -13,7 +13,7 @@ import CheckBox from "../components/CheckBox/CheckBox";
 import "./UpdateActivity.css";
 import { useFormik } from "formik";
 import MessageError from "../components/MessageError/MessageError";
-import VectorActivity from "../types/classes/vectorActivity";
+import VectorActivity from "../types/classes/vectorActivity/vectorActivity";
 
 export interface UpdateActivityProps {}
 

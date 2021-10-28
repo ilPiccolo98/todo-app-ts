@@ -1,10 +1,10 @@
-import Activity, { ActivityPlain } from "./activity";
+import Activity, { ActivityPlain } from "../activity/activity";
 
 class VectorActivity {
   public constructor(private activities: Array<Activity> = []) {}
 
-  public printActivities(): void {
-    console.log(this.activities);
+  public size(): number {
+    return this.activities.length;
   }
 
   public at(index: number): Activity {
@@ -79,7 +79,10 @@ class VectorActivity {
 
   private getPositionActivity = (id: number): number => {
     let index: number = 0;
-    while (this.activities[index].Id !== id) {
+    while (
+      this.activities[index].Id !== id &&
+      index !== this.activities.length
+    ) {
       ++index;
     }
     return index;

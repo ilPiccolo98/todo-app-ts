@@ -1,5 +1,5 @@
-import Activity, { ActivityPlain } from "../types/classes/activity";
-import VectorActivity from "../types/classes/vectorActivity";
+import Activity, { ActivityPlain } from "../types/classes/activity/activity";
+import VectorActivity from "../types/classes/vectorActivity/vectorActivity";
 
 const getInitialState = (): ActivityPlain[] => {
   const activities = new VectorActivity([

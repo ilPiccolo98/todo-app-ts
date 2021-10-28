@@ -12,7 +12,7 @@ import TextField from "../components/TextField/TextField";
 import "./DeleteActivity.css";
 import { useFormik } from "formik";
 import MessageError from "../components/MessageError/MessageError";
-import VectorActivity from "../types/classes/vectorActivity";
+import VectorActivity from "../types/classes/vectorActivity/vectorActivity";
 
 export interface DeleteActivityProps {}
 

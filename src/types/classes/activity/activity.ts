@@ -1,4 +1,4 @@
-import IClonable from "../interfaces/iClonable";
+import IClonable from "../../interfaces/iClonable";
 
 export type ActivityPlain = {
   id: number;
@@ -15,6 +15,10 @@ class Activity implements IClonable<Activity> {
   ) {
     this.id = Activity.counterId;
     ++Activity.counterId;
+  }
+
+  public static resetIdGenerator(): void {
+    Activity.counterId = 1;
   }
 
   public get Id() {
