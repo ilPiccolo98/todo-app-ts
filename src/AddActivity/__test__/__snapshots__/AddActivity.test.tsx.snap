@@ -6,7 +6,7 @@ Object {
   "baseElement": <body>
     <div>
       <div
-        class="form primary-form form-style"
+        class="form primary-form undefined"
       >
         <p>
           <b>
@@ -151,7 +151,7 @@ Object {
   </body>,
   "container": <div>
     <div
-      class="form primary-form form-style"
+      class="form primary-form undefined"
     >
       <p>
         <b>
@@ -353,7 +353,7 @@ Object {
   "baseElement": <body>
     <div>
       <div
-        class="form primary-form form-style"
+        class="form primary-form undefined"
       >
         <p>
           <b>
@@ -498,7 +498,7 @@ Object {
   </body>,
   "container": <div>
     <div
-      class="form primary-form form-style"
+      class="form primary-form undefined"
     >
       <p>
         <b>
@@ -700,7 +700,7 @@ Object {
   "baseElement": <body>
     <div>
       <div
-        class="form primary-form form-style"
+        class="form primary-form undefined"
       >
         <p>
           <b>
@@ -847,7 +847,7 @@ Object {
   </body>,
   "container": <div>
     <div
-      class="form primary-form form-style"
+      class="form primary-form undefined"
     >
       <p>
         <b>
@@ -1051,7 +1051,7 @@ Object {
   "baseElement": <body>
     <div>
       <div
-        class="form primary-form form-style"
+        class="form primary-form undefined"
       >
         <p>
           <b>
@@ -1198,7 +1198,7 @@ Object {
   </body>,
   "container": <div>
     <div
-      class="form primary-form form-style"
+      class="form primary-form undefined"
     >
       <p>
         <b>

@@ -2,7 +2,7 @@
 
 exports[`Storyshots AddActivity Default 1`] = `
 <div
-  className="form primary-form form-style"
+  className="form primary-form undefined"
 >
   <p>
     <b>
