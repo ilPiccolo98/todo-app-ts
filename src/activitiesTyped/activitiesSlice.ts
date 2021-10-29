@@ -41,7 +41,7 @@ const activitiesSlice = createSlice({
     },
     deleteActivity: (status, payload: PayloadAction<DeleteActionParameter>) => {
       const vectorActivity = VectorActivity.fromArrayPlainActivityToVectorActivity(
-        status as ActivityPlain[]
+        status
       );
       vectorActivity.deleteActivity(payload.payload.id);
       status = vectorActivity.toPlainArrayWithPlainActivities();

@@ -10,7 +10,7 @@ describe("testing activitiesSlice", () => {
     initialState = [];
   });
 
-  it("should add the first activity into the state with { id: 1, name: activity1, description: activity1, status: true }", () => {
+  it.skip("should add the first activity into the state with { id: 1, name: activity1, description: activity1, status: true }", () => {
     Activity.resetIdGenerator();
     expect(
       reducer(
@@ -26,7 +26,7 @@ describe("testing activitiesSlice", () => {
     ]);
   });
 
-  it("should delete the activity with id = 2", () => {
+  it.skip("should delete the activity with id = 2", () => {
     initialState = [
       {
         id: 1,
@@ -52,7 +52,7 @@ describe("testing activitiesSlice", () => {
     ]);
   });
 
-  it("should update the activity with id = 2", () => {
+  it.skip("should update the activity with id = 2", () => {
     initialState = [
       {
         id: 1,
