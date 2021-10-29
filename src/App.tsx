@@ -4,36 +4,40 @@ import { BrowserRouter, Link, Route, Switch } from "react-router-dom";
 import AddActivity from "./AddActivity/AddActivity";
 import DeleteActivity from "./DeleteActivity/DeleteActivity";
 import UpdateActivity from "./UpdateActivity/UpdateActivity";
+import "./App.css";
+import Button from "./components/Button/Button";
 
 function App() {
   return (
     <BrowserRouter>
-      <div>
+      <div className="page-style">
         <TableActivities />
-        <div>
+        <div className="group-buttons-style">
           <Link to="/add-activity">
-            <button>Add activity</button>
+            <Button variant="primary">Add activity</Button>
           </Link>
           <Link to="/update-activity">
-            <button>Update activity</button>
+            <Button variant="primary">Update activity</Button>
           </Link>
           <Link to="/delete-activity">
-            <button>Delete activity</button>
+            <Button variant="primary">Delete activity</Button>
           </Link>
         </div>
-        <Switch>
-          <Route path="/add-activity" exact render={() => <AddActivity />} />
-          <Route
-            path="/update-activity"
-            exact
-            render={() => <UpdateActivity />}
-          />
-          <Route
-            path="/delete-activity"
-            exact
-            render={() => <DeleteActivity />}
-          />
-        </Switch>
+        <div className="form-style">
+          <Switch>
+            <Route path="/add-activity" exact render={() => <AddActivity />} />
+            <Route
+              path="/update-activity"
+              exact
+              render={() => <UpdateActivity />}
+            />
+            <Route
+              path="/delete-activity"
+              exact
+              render={() => <DeleteActivity />}
+            />
+          </Switch>
+        </div>
       </div>
     </BrowserRouter>
   );

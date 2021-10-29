@@ -3,6 +3,7 @@ import { activitiesSelector } from "../activitiesWithFunctions/activitiesSlice";
 import { Activity } from "../activities/initialActivities";
 import { useSelector } from "react-redux";
 import { RootState } from "../activities/activitiesStore";
+import "./TableActivities.css";
 
 const TableActivities: React.FC = (): JSX.Element => {
   const activities: Array<Activity> = useSelector<RootState, Array<Activity>>(

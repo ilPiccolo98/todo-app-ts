@@ -29,12 +29,7 @@ export const AddActivity: React.FC<AddActivityProps> = (): JSX.Element => {
     },
   });
   return (
-    <Form
-      title="Add Activity"
-      variant="primary"
-      className="form-style"
-      onSubmit={formik.handleSubmit}
-    >
+    <Form title="Add Activity" variant="primary" onSubmit={formik.handleSubmit}>
       <div>
         <div className="float-left">
           <TextField
