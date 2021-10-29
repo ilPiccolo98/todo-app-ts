@@ -4,13 +4,12 @@ import {
   render,
   RenderResult,
   waitFor,
-  screen,
 } from "@testing-library/react";
 import AddActivity from "../AddActivity";
 import { Provider } from "react-redux";
 import "@testing-library/jest-dom/extend-expect";
-import * as actions from "../../activities/activitiesSlice";
-import store from "../../activities/activitiesStore";
+import * as actions from "../../activitiesWithFunctions/activitiesSlice";
+import store from "../../activitiesWithFunctions/activitiesStore";
 
 const renderAddActivity = () => {
   return render(

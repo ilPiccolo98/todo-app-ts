@@ -1,6 +1,6 @@
 import VectorActivity from "../vectorActivity";
 import "@testing-library/jest-dom/extend-expect";
-import Activity from "../../activity/activity";
+import Activity, { ActivityPlain } from "../../activity/activity";
 
 describe("testing the VectorActivity class", () => {
   it("should add a new Activity", () => {
@@ -77,5 +77,51 @@ describe("testing the VectorActivity class", () => {
       new Activity("name", "description", true),
     ]);
     expect(vector.doesActivityExist(3)).toBe(false);
+  });
+
+  it("should convert an ActivityPlain to Activity", () => {
+    const activityPlain: ActivityPlain = {
+      id: 1,
+      name: "activity",
+      description: "activity",
+      status: true,
+    };
+    const activityConverted: Activity = Activity.fromActivityPlainToActivity(
+      activityPlain
+    );
+    expect(activityConverted.Id).toBe(1);
+    expect(activityConverted.Name).toBe("activity");
+    expect(activityConverted.Description).toBe("activity");
+    expect(activityConverted.Status).toBe(true);
+  });
+
+  it("shoud convert an array with ActivitiesPlain to VectorActivity", () => {
+    const activities: Array<ActivityPlain> = [
+      {
+        id: 1,
+        name: "activity1",
+        description: "activity1",
+        status: true,
+      },
+      {
+        id: 2,
+        name: "activity2",
+        description: "activity2",
+        status: false,
+      },
+    ];
+    const vector: VectorActivity = VectorActivity.fromArrayPlainActivityToVectorActivity(
+      activities
+    );
+    const activity1: Activity = vector.at(0);
+    const activity2: Activity = vector.at(1);
+    expect(activity1.Id).toBe(1);
+    expect(activity1.Name).toBe("activity1");
+    expect(activity1.Description).toBe("activity1");
+    expect(activity1.Status).toBe(true);
+    expect(activity2.Id).toBe(2);
+    expect(activity2.Name).toBe("activity2");
+    expect(activity2.Description).toBe("activity2");
+    expect(activity2.Status).toBe(false);
   });
 });

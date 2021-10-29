@@ -1,5 +1,5 @@
 import React from "react";
-import { activitiesSelector } from "../activities/activitiesSlice";
+import { activitiesSelector } from "../activitiesWithFunctions/activitiesSlice";
 import { Activity } from "../activities/initialActivities";
 import { useSelector } from "react-redux";
 import { RootState } from "../activities/activitiesStore";

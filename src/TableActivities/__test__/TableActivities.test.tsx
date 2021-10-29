@@ -1,10 +1,10 @@
 import React from "react";
-import { fireEvent, render, RenderResult } from "@testing-library/react";
+import { render, RenderResult } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
-import * as actions from "../../activities/activitiesSlice";
+import * as actions from "../../activitiesWithFunctions/activitiesSlice";
 import TableActivities from "../TableActivities";
 import { Provider } from "react-redux";
-import store from "../../activities/activitiesStore";
+import store from "../../activitiesWithFunctions/activitiesStore";
 
 const renderTableActivity = () => {
   return render(
@@ -40,6 +40,7 @@ describe("testing the TableActivities component", () => {
   });
 
   it("should have 1 activity", () => {
+    const activitiesSelectorSpy = jest.spyOn(actions, "activitiesSelector");
     activitiesSelectorSpy.mockReset().mockReturnValue([
       {
         id: 1,
@@ -59,5 +60,6 @@ describe("testing the TableActivities component", () => {
     expect(nameCell.textContent).toBe("activity1");
     expect(descriptionCell.textContent).toBe("activity1");
     expect(statusCell.textContent).toBe("true");
+    expect(activitiesSelectorSpy).toHaveBeenCalled();
   });
 });

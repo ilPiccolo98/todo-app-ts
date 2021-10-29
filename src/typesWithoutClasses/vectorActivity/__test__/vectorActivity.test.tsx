@@ -29,7 +29,8 @@ describe("testing the vectorActivity functions", () => {
     const vector: Array<Activity> = [
       createActivity("activity1", "activity1", true),
     ];
-    expect(updateActivity(vector, 1, "updated", "updated", false)).toBe(true);
+    const updated = updateActivity(vector, 1, "updated", "updated", false);
+    expect(updated).toBe(true);
     expect(vector).toEqual([
       {
         id: 1,
@@ -45,7 +46,8 @@ describe("testing the vectorActivity functions", () => {
     const vector: Array<Activity> = [
       createActivity("activity1", "activity1", true),
     ];
-    expect(updateActivity(vector, 2, "updated", "updated", false)).toBe(false);
+    const updated = updateActivity(vector, 2, "updated", "updated", false);
+    expect(updated).toBe(false);
   });
 
   it("should delete the activity with id=1", () => {
@@ -54,7 +56,8 @@ describe("testing the vectorActivity functions", () => {
       createActivity("activity1", "activity1", true),
       createActivity("activity2", "activity2", true),
     ];
-    expect(deleteActivity(vector, 2)).toBe(true);
+    const deleted = deleteActivity(vector, 2);
+    expect(deleted).toBe(true);
     expect(vector).toEqual([
       {
         id: 1,
@@ -70,6 +73,7 @@ describe("testing the vectorActivity functions", () => {
     const vector: Array<Activity> = [
       createActivity("activity1", "activity1", true),
     ];
-    expect(deleteActivity(vector, 2)).toBe(false);
+    const deleted = deleteActivity(vector, 2);
+    expect(deleted).toBe(false);
   });
 });

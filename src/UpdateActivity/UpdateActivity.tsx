@@ -1,9 +1,6 @@
 import React from "react";
-import { useSelector, useDispatch } from "react-redux";
-import {
-  updateActivity,
-  activitiesSelector,
-} from "../activitiesTyped/activitiesSlice";
+import { useDispatch } from "react-redux";
+import { updateActivity } from "../activitiesWithFunctions/activitiesSlice";
 import initialValues from "./initialValues";
 import validationSchema from "./validationSchema";
 import Form from "../components/Form/Form";
@@ -13,7 +10,6 @@ import CheckBox from "../components/CheckBox/CheckBox";
 import "./UpdateActivity.css";
 import { useFormik } from "formik";
 import MessageError from "../components/MessageError/MessageError";
-import VectorActivity from "../types/classes/vectorActivity/vectorActivity";
 
 export interface UpdateActivityProps {}
 
@@ -23,21 +19,16 @@ export const UpdateActivity: React.FC<UpdateActivityProps> = (): JSX.Element => 
     initialValues,
     validationSchema,
     onSubmit: (values) => {
-      if (activities.doesActivityExist(+values.id)) {
-        dispatch(
-          updateActivity({
-            id: +values.id,
-            name: values.name,
-            description: values.description,
-            status: values.status,
-          })
-        );
-      }
+      dispatch(
+        updateActivity({
+          id: +values.id,
+          name: values.name,
+          description: values.description,
+          status: values.status,
+        })
+      );
     },
   });
-  const activities: VectorActivity = VectorActivity.fromArrayPlainActivityToVectorActivity(
-    useSelector(activitiesSelector)
-  );
 
   return (
     <Form

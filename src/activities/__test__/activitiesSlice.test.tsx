@@ -1,4 +1,3 @@
-import React from "react";
 import "@testing-library/jest-dom/extend-expect";
 import reducer from "../activitiesSlice";
 import * as actions from "../activitiesSlice";
@@ -132,5 +131,27 @@ describe("testing doesActivityExist function", () => {
       },
     ];
     expect(actions.doesActivityExist(initialState, 10)).toBe(false);
+  });
+
+  it("should select and get the current state", () => {
+    expect(
+      actions.activitiesSelector({
+        activities: [
+          {
+            id: 1,
+            name: "activity",
+            description: "activity",
+            status: true,
+          },
+        ],
+      })
+    ).toEqual([
+      {
+        id: 1,
+        name: "activity",
+        description: "activity",
+        status: true,
+      },
+    ]);
   });
 });

@@ -1,7 +1,7 @@
 import React, { HTMLAttributes } from "react";
 import { useDispatch } from "react-redux";
 import initialValues from "./initialValues";
-import { addActivity } from "../activities/activitiesSlice";
+import { addActivity } from "../activitiesWithFunctions/activitiesSlice";
 import validationSchema from "./validationSchema";
 import Form from "../components/Form/Form";
 import TextField from "../components/TextField/TextField";
