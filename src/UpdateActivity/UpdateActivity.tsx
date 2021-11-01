@@ -1,6 +1,12 @@
-import React from "react";
-import { useDispatch } from "react-redux";
-import { updateActivity } from "../activitiesWithFunctions/activitiesSlice";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  updateActivity,
+  resetUpdateState,
+  fetchAllActivities,
+  updateStateSelector,
+  UpdateState,
+} from "../activities/activitiesSlice";
 import initialValues from "./initialValues";
 import validationSchema from "./validationSchema";
 import Form from "../components/Form/Form";
@@ -10,11 +16,27 @@ import CheckBox from "../components/CheckBox/CheckBox";
 import "./UpdateActivity.css";
 import { useFormik } from "formik";
 import MessageError from "../components/MessageError/MessageError";
+import { RootState } from "../activities/activitiesStore";
 
 export interface UpdateActivityProps {}
 
 export const UpdateActivity: React.FC<UpdateActivityProps> = (): JSX.Element => {
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(resetUpdateState());
+  }, [dispatch]);
+
+  const updateState: UpdateState = useSelector<RootState, UpdateState>(
+    updateStateSelector
+  );
+
+  useEffect(() => {
+    if (updateState === UpdateState.Updated) {
+      dispatch(fetchAllActivities());
+    }
+  }, [dispatch, updateState]);
+
   const formik = useFormik({
     initialValues,
     validationSchema,

@@ -1,25 +1,4 @@
-export type Activity = {
-  id: number;
-  name: string;
-  description: string;
-  status: boolean;
-};
-
-let idCounter = 1;
-export const createActivity = (
-  name: string,
-  description: string,
-  status: boolean
-) => {
-  const newActivity: Activity = {
-    id: idCounter,
-    name,
-    description,
-    status,
-  };
-  ++idCounter;
-  return newActivity;
-};
+import Activity, { createActivity } from "../types/activity/activity";
 
 const getInitialActivities = (): Array<Activity> => {
   return [

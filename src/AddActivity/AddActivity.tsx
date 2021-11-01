@@ -1,7 +1,13 @@
-import React, { HTMLAttributes } from "react";
-import { useDispatch } from "react-redux";
+import React, { HTMLAttributes, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import initialValues from "./initialValues";
-import { addActivity } from "../activitiesWithFunctions/activitiesSlice";
+import {
+  addActivity,
+  addStateSelector,
+  AddState,
+  resetAddState,
+  fetchAllActivities,
+} from "../activities/activitiesSlice";
 import validationSchema from "./validationSchema";
 import Form from "../components/Form/Form";
 import TextField from "../components/TextField/TextField";
@@ -10,11 +16,25 @@ import Submit from "../components/Submit/Submit";
 import CheckBox from "../components/CheckBox/CheckBox";
 import MessageError from "../components/MessageError/MessageError";
 import "./AddActivity.css";
+import { RootState } from "../activities/activitiesStore";
 
 export interface AddActivityProps extends HTMLAttributes<HTMLFormElement> {}
 
 export const AddActivity: React.FC<AddActivityProps> = (): JSX.Element => {
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(resetAddState());
+  }, [dispatch]);
+
+  const addState: AddState = useSelector<RootState, AddState>(addStateSelector);
+
+  useEffect(() => {
+    if (addState === AddState.Added) {
+      dispatch(fetchAllActivities());
+    }
+  }, [addState, dispatch]);
+
   const formik = useFormik({
     initialValues,
     validationSchema,

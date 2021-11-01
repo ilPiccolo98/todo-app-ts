@@ -1,10 +1,10 @@
 import React from "react";
 import { render, RenderResult } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
-import * as actions from "../../activitiesWithFunctions/activitiesSlice";
+import * as actions from "../../activities/activitiesSlice";
 import TableActivities from "../TableActivities";
 import { Provider } from "react-redux";
-import store from "../../activitiesWithFunctions/activitiesStore";
+import store from "../../activities/activitiesStore";
 
 const renderTableActivity = () => {
   return render(

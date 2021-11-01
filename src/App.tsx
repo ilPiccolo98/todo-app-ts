@@ -6,6 +6,9 @@ import DeleteActivity from "./DeleteActivity/DeleteActivity";
 import UpdateActivity from "./UpdateActivity/UpdateActivity";
 import "./App.css";
 import Button from "./components/Button/Button";
+import axios from "axios";
+
+axios.defaults.baseURL = "http://localhost:3001";
 
 function App() {
   return (

@@ -1,128 +1,202 @@
-import getInitialActivities, { createActivity } from "./initialActivities";
-import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { Activity } from "./initialActivities";
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { RootState } from "./activitiesStore";
-import { WritableDraft } from "immer/dist/internal";
+import Activity from "../types/activity/activity";
+import axios, { AxiosError } from "axios";
 
-type UpdateActionParameter = {
-  id: number;
-  name: string;
-  description: string;
-  status: boolean;
+export enum RetrieveState {
+  Error,
+  Loading,
+  Loaded,
+}
+
+export enum AddState {
+  Adding,
+  Added,
+  NotAdded,
+  Null,
+}
+
+export enum UpdateState {
+  Updating,
+  Updated,
+  NotUpdated,
+  Null,
+}
+
+export enum DeleteState {
+  Deleting,
+  Deleted,
+  NotDeleted,
+  Null,
+}
+
+type RetrieveActivities = {
+  activities: Activity[];
 };
 
-type DeleteActionParameter = {
-  id: number;
+type AddActivity = {
+  isItAdded: boolean;
 };
 
-type AddActionParameter = {
-  name: string;
-  description: string;
-  status: boolean;
+type DeleteActivity = {
+  isItDeleted: boolean;
 };
 
-const executeAddActivity = (
-  activities: WritableDraft<Activity>[],
-  name: string,
-  description: string,
-  status: boolean
-): void => {
-  activities.push(createActivity(name, description, status));
+type UpdateActivity = {
+  isItUpdated: boolean;
 };
 
-export const doesActivityExist = (
-  activities: Array<Activity>,
-  id: number
-): boolean => {
-  for (let i: number = 0; i !== activities.length; ++i) {
-    if (activities[i].id === id) {
-      return true;
+export const fetchAllActivities = createAsyncThunk(
+  "activities/fetchAllActivities",
+  async (_, thunkAPI) => {
+    try {
+      const response = await axios.get<RetrieveActivities>(
+        "/activities/retrieve"
+      );
+      return response.data.activities;
+    } catch (error) {
+      const axiosError = error as AxiosError;
+      return thunkAPI.rejectWithValue({ errorMessage: axiosError.message });
     }
   }
-  return false;
-};
+);
 
-const getPositionActivity = (
-  activities: WritableDraft<Activity>[],
-  id: number
-): number => {
-  let index: number = 0;
-  while (activities[index].id !== id) {
-    ++index;
+export const addActivity = createAsyncThunk(
+  "activities/addActivity",
+  async (
+    newActivity: { name: string; description: string; status: boolean },
+    thunkAPI
+  ) => {
+    try {
+      const response = await axios.post<AddActivity>("/activities/add", {
+        ...newActivity,
+      });
+      return response.data.isItAdded;
+    } catch (error) {
+      const axiosError = error as AxiosError;
+      return thunkAPI.rejectWithValue({ errorMessage: axiosError.message });
+    }
   }
-  return index;
-};
+);
 
-const executeDeleteActivity = (
-  activities: WritableDraft<Activity>[],
-  id: number
-): void => {
-  const positionActivityToDelete: number = getPositionActivity(activities, id);
-  activities.splice(positionActivityToDelete, 1);
-};
+export const updateActivity = createAsyncThunk(
+  "activities/updateActivity",
+  async (activityToUpdate: Activity, thunkAPI) => {
+    try {
+      const response = await axios.post<UpdateActivity>("/activities/update", {
+        ...activityToUpdate,
+      });
+      return response.data.isItUpdated;
+    } catch (error) {
+      const axiosError = error as AxiosError;
+      return thunkAPI.rejectWithValue({ errorMessage: axiosError.message });
+    }
+  }
+);
 
-const updateActivityItem = (
-  activities: WritableDraft<Activity>[],
-  position: number,
-  name: string,
-  description: string,
-  status: boolean
-): void => {
-  activities[position].name = name;
-  activities[position].description = description;
-  activities[position].status = status;
-};
-
-const executeUpdateActivity = (
-  activities: WritableDraft<Activity>[],
-  id: number,
-  name: string,
-  description: string,
-  status: boolean
-): void => {
-  const positionActivityToUpdate: number = getPositionActivity(activities, id);
-  updateActivityItem(
-    activities,
-    positionActivityToUpdate,
-    name,
-    description,
-    status
-  );
-};
+export const deleteActivity = createAsyncThunk(
+  "activities/deleteActivity",
+  async (id: number, thunkAPI) => {
+    try {
+      const response = await axios.delete<DeleteActivity>(
+        `/activities/delete/${id}`
+      );
+      return response.data.isItDeleted;
+    } catch (error) {
+      const axiosError = error as AxiosError;
+      return thunkAPI.rejectWithValue({ errorMessage: axiosError.message });
+    }
+  }
+);
 
 const activitiesSlice = createSlice({
   name: "activities",
-  initialState: getInitialActivities(),
+  initialState: {
+    activities: new Array<Activity>(),
+    addingState: AddState.Null,
+    updatingState: UpdateState.Null,
+    deletingState: DeleteState.Null,
+    retrievingState: RetrieveState.Loading,
+  },
   reducers: {
-    addActivity: (state, action: PayloadAction<AddActionParameter>) => {
-      executeAddActivity(
-        state,
-        action.payload.name,
-        action.payload.description,
-        action.payload.status
-      );
+    resetAddState: (state) => {
+      state.addingState = AddState.Null;
     },
-    deleteActivity: (state, action: PayloadAction<DeleteActionParameter>) => {
-      executeDeleteActivity(state, action.payload.id);
+    resetUpdateState: (state) => {
+      state.updatingState = UpdateState.Null;
     },
-    updateActivity: (state, action: PayloadAction<UpdateActionParameter>) => {
-      executeUpdateActivity(
-        state,
-        action.payload.id,
-        action.payload.name,
-        action.payload.description,
-        action.payload.status
-      );
+    resetDeleteState: (state) => {
+      state.deletingState = DeleteState.Null;
     },
+  },
+  extraReducers: (builder) => {
+    builder.addCase(addActivity.fulfilled, (state, action) => {
+      const isItAdded: boolean = action.payload as boolean;
+      if (isItAdded) state.addingState = AddState.Added;
+      else {
+        state.addingState = AddState.NotAdded;
+      }
+    });
+    builder.addCase(addActivity.pending, (state, action) => {
+      state.addingState = AddState.Adding;
+    });
+    builder.addCase(addActivity.rejected, (state, action) => {
+      state.addingState = AddState.NotAdded;
+    });
+    builder.addCase(updateActivity.fulfilled, (state, action) => {
+      const isItUpdated: boolean = action.payload as boolean;
+      if (isItUpdated) state.updatingState = UpdateState.Updated;
+      else {
+        state.updatingState = UpdateState.NotUpdated;
+      }
+    });
+    builder.addCase(updateActivity.pending, (state, action) => {
+      state.updatingState = UpdateState.Updating;
+    });
+    builder.addCase(updateActivity.rejected, (state, action) => {
+      state.updatingState = UpdateState.NotUpdated;
+    });
+    builder.addCase(deleteActivity.fulfilled, (state, action) => {
+      const isItDeleted: boolean = action.payload as boolean;
+      if (isItDeleted) state.deletingState = DeleteState.Deleted;
+      else {
+        state.deletingState = DeleteState.NotDeleted;
+      }
+    });
+    builder.addCase(deleteActivity.pending, (state, action) => {
+      state.deletingState = DeleteState.Deleting;
+    });
+    builder.addCase(deleteActivity.rejected, (state, action) => {
+      state.deletingState = DeleteState.NotDeleted;
+    });
+    builder.addCase(fetchAllActivities.fulfilled, (state, action) => {
+      state.activities = action.payload as Activity[];
+      state.retrievingState = RetrieveState.Loaded;
+    });
+    builder.addCase(fetchAllActivities.pending, (state, action) => {
+      state.retrievingState = RetrieveState.Loading;
+    });
+    builder.addCase(fetchAllActivities.rejected, (state, action) => {
+      state.retrievingState = RetrieveState.Error;
+    });
   },
 });
 
-export const {
-  addActivity,
-  deleteActivity,
-  updateActivity,
-} = activitiesSlice.actions;
+export const activitiesSelector = (state: RootState) =>
+  state.activities.activities;
+export const retrievingStateSelector = (state: RootState) =>
+  state.activities.retrievingState;
+export const addStateSelector = (state: RootState) =>
+  state.activities.addingState;
+export const updateStateSelector = (state: RootState) =>
+  state.activities.updatingState;
+export const deleteStateSelector = (state: RootState) =>
+  state.activities.deletingState;
 
-export const activitiesSelector = (state: RootState) => state.activities;
+export const {
+  resetAddState,
+  resetDeleteState,
+  resetUpdateState,
+} = activitiesSlice.actions;
 
 export default activitiesSlice.reducer;
