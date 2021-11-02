@@ -32,10 +32,18 @@ const TableActivities: React.FC = (): JSX.Element => {
       (activity: Activity): JSX.Element => {
         return (
           <tr key={activity.id}>
-            <td>{activity.id}</td>
-            <td>{activity.name}</td>
-            <td>{activity.description}</td>
-            <td>{activity.status.toString()}</td>
+            <td>
+              <div className="cell-style">{activity.id}</div>
+            </td>
+            <td>
+              <div className="cell-style">{activity.name}</div>
+            </td>
+            <td>
+              <div className="cell-style">{activity.description}</div>
+            </td>
+            <td>
+              <div className="cell-style">{activity.status.toString()}</div>
+            </td>
           </tr>
         );
       }

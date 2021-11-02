@@ -13,18 +13,22 @@ axios.defaults.baseURL = "http://localhost:3001";
 function App() {
   return (
     <BrowserRouter>
-      <div className="page-style">
-        <TableActivities />
-        <div className="group-buttons-style">
-          <Link to="/add-activity">
-            <Button variant="primary">Add activity</Button>
-          </Link>
-          <Link to="/update-activity">
-            <Button variant="primary">Update activity</Button>
-          </Link>
-          <Link to="/delete-activity">
-            <Button variant="primary">Delete activity</Button>
-          </Link>
+      <div className="app-style">
+        <div className="table-buttons-style">
+          <div className="table-style">
+            <TableActivities />
+          </div>
+          <div>
+            <Link to="/add-activity">
+              <Button variant="primary">Add activity</Button>
+            </Link>
+            <Link to="/update-activity">
+              <Button variant="primary">Update activity</Button>
+            </Link>
+            <Link to="/delete-activity">
+              <Button variant="primary">Delete activity</Button>
+            </Link>
+          </div>
         </div>
         <div className="form-style">
           <Switch>
