@@ -17,6 +17,7 @@ import CheckBox from "../components/CheckBox/CheckBox";
 import MessageError from "../components/MessageError/MessageError";
 import "./AddActivity.css";
 import { RootState } from "../activities/activitiesStore";
+import Message from "../components/Message/Message";
 
 export interface AddActivityProps extends HTMLAttributes<HTMLFormElement> {}
 
@@ -48,6 +49,18 @@ export const AddActivity: React.FC<AddActivityProps> = (): JSX.Element => {
       );
     },
   });
+
+  const getMessage = (): JSX.Element => {
+    if (addState === AddState.Added) {
+      return <Message>Activity Added</Message>;
+    } else if (addState === AddState.Adding) {
+      return <Message>Adding Activity</Message>;
+    } else if (addState === AddState.NotAdded) {
+      return <MessageError size="small">Activity not added!</MessageError>;
+    }
+    return <></>;
+  };
+
   return (
     <Form title="Add Activity" variant="primary" onSubmit={formik.handleSubmit}>
       <div>
@@ -102,6 +115,7 @@ export const AddActivity: React.FC<AddActivityProps> = (): JSX.Element => {
         <div className="error-description">
           <MessageError size="medium">{formik.errors.description}</MessageError>
         </div>
+        <div>{getMessage()}</div>
       </div>
     </Form>
   );

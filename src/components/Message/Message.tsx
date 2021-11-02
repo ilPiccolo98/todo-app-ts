@@ -4,7 +4,7 @@ interface MessageProps extends HTMLAttributes<HTMLSpanElement> {
   children: string;
 }
 
-const Message: React.FC<MessageProps> = (props): JSX.Element => {
+const Message: React.FC<MessageProps> = ({ ...props }): JSX.Element => {
   return <span {...props}>{props.children}</span>;
 };
 

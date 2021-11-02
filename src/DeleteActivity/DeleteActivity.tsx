@@ -16,6 +16,7 @@ import "./DeleteActivity.css";
 import { useFormik } from "formik";
 import MessageError from "../components/MessageError/MessageError";
 import { RootState } from "../activities/activitiesStore";
+import Message from "../components/Message/Message";
 
 export interface DeleteActivityProps {}
 
@@ -43,6 +44,17 @@ export const DeleteActivity: React.FC<DeleteActivityProps> = (): JSX.Element => 
       dispatch(deleteActivity(+values.id));
     },
   });
+
+  const getMessage = (): JSX.Element => {
+    if (deleteState === DeleteState.Deleted) {
+      return <Message>Activity Deleted</Message>;
+    } else if (deleteState === DeleteState.Deleting) {
+      return <Message>Deleting Activity</Message>;
+    } else if (deleteState === DeleteState.NotDeleted) {
+      return <MessageError size="small">Activity not deleted!</MessageError>;
+    }
+    return <></>;
+  };
 
   return (
     <Form
@@ -72,6 +84,7 @@ export const DeleteActivity: React.FC<DeleteActivityProps> = (): JSX.Element => 
       <div className="error-id">
         <MessageError size="medium">{formik.errors.id}</MessageError>
       </div>
+      <div>{getMessage()}</div>
     </Form>
   );
 };

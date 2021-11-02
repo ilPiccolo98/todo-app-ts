@@ -17,6 +17,7 @@ import "./UpdateActivity.css";
 import { useFormik } from "formik";
 import MessageError from "../components/MessageError/MessageError";
 import { RootState } from "../activities/activitiesStore";
+import Message from "../components/Message/Message";
 
 export interface UpdateActivityProps {}
 
@@ -51,6 +52,17 @@ export const UpdateActivity: React.FC<UpdateActivityProps> = (): JSX.Element => 
       );
     },
   });
+
+  const getMessage = (): JSX.Element => {
+    if (updateState === UpdateState.Updated) {
+      return <Message>Activity Updated</Message>;
+    } else if (updateState === UpdateState.Updating) {
+      return <Message>Updating Activity</Message>;
+    } else if (updateState === UpdateState.NotUpdated) {
+      return <MessageError size="small">Activity not updated!</MessageError>;
+    }
+    return <></>;
+  };
 
   return (
     <Form
@@ -127,6 +139,7 @@ export const UpdateActivity: React.FC<UpdateActivityProps> = (): JSX.Element => 
         <div className="error-description">
           <MessageError size="medium">{formik.errors.description}</MessageError>
         </div>
+        <div>{getMessage()}</div>
       </div>
     </Form>
   );
