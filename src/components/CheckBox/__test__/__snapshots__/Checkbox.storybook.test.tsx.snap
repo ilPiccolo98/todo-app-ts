@@ -150,6 +150,9 @@ exports[`Storyshots AddActivity Default 1`] = `
           <b />
         </span>
       </div>
+      <div
+        className="message-description"
+      />
     </div>
   </form>
 </div>
@@ -280,6 +283,9 @@ exports[`Storyshots DeleteActivity Default 1`] = `
         <b />
       </span>
     </div>
+    <div
+      className="message-description"
+    />
   </form>
 </div>
 `;
@@ -970,6 +976,25 @@ exports[`Storyshots Form Secondary 1`] = `
 </div>
 `;
 
+exports[`Storyshots Loading Default 1`] = `
+<span
+  className="undefined loading-size-medium loading-style"
+  size="medium"
+>
+  Loading...
+</span>
+`;
+
+exports[`Storyshots Message Default 1`] = `
+<span
+  className="undefined message-variant-blue message-size-medium"
+  size="medium"
+  variant="blue"
+>
+  Message to show
+</span>
+`;
+
 exports[`Storyshots MessageError Large 1`] = `
 <span
   className="message-error undefined large"
@@ -1296,6 +1321,9 @@ exports[`Storyshots UpdateActivity Default 1`] = `
           <b />
         </span>
       </div>
+      <div
+        className="message-description"
+      />
     </div>
   </form>
 </div>

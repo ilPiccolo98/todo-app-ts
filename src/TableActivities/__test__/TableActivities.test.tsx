@@ -32,11 +32,18 @@ const getCells = (tableBody: HTMLBodyElement, index: number) => {
   return { idCell, nameCell, descriptionCell, statusCell };
 };
 
-const activitiesSelectorSpy = jest.spyOn(actions, "activitiesSelector");
-
 describe("testing the TableActivities component", () => {
+  const activitiesSelectorSpy = jest.spyOn(actions, "activitiesSelector");
+  const retrievingStateSelectorSpy = jest.spyOn(
+    actions,
+    "retrievingStateSelector"
+  );
+
   beforeEach(() => {
     activitiesSelectorSpy.mockReset().mockReturnValue([]);
+    retrievingStateSelectorSpy
+      .mockReset()
+      .mockReturnValue(actions.RetrieveState.Loaded);
   });
 
   it("should have 1 activity", () => {
@@ -61,5 +68,26 @@ describe("testing the TableActivities component", () => {
     expect(descriptionCell.textContent).toBe("activity1");
     expect(statusCell.textContent).toBe("true");
     expect(activitiesSelectorSpy).toHaveBeenCalled();
+    expect(component).toMatchSnapshot();
+  });
+
+  it("should show the message: 'Loading...' when retrievingState === RetrieveState.Loading", () => {
+    retrievingStateSelectorSpy
+      .mockReset()
+      .mockReturnValue(actions.RetrieveState.Loading);
+    const component = renderTableActivity();
+    const message = component.getByText(/Loading.../i);
+    expect(message.textContent).toBe("Loading...");
+    expect(component).toMatchSnapshot();
+  });
+
+  it("should show the message: 'Activities not retrieved!' when retrievingState === RetrieveState.Error", () => {
+    retrievingStateSelectorSpy
+      .mockReset()
+      .mockReturnValue(actions.RetrieveState.Error);
+    const component = renderTableActivity();
+    const message = component.getByText(/Activities not retrieved!/i);
+    expect(message.textContent).toBe("Activities not retrieved!");
+    expect(component).toMatchSnapshot();
   });
 });

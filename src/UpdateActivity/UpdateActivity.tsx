@@ -55,9 +55,17 @@ export const UpdateActivity: React.FC<UpdateActivityProps> = (): JSX.Element => 
 
   const getMessage = (): JSX.Element => {
     if (updateState === UpdateState.Updated) {
-      return <Message>Activity Updated</Message>;
+      return (
+        <Message size="large" variant="green">
+          Activity Updated
+        </Message>
+      );
     } else if (updateState === UpdateState.Updating) {
-      return <Message>Updating Activity</Message>;
+      return (
+        <Message size="large" variant="green">
+          Updating Activity
+        </Message>
+      );
     } else if (updateState === UpdateState.NotUpdated) {
       return <MessageError size="small">Activity not updated!</MessageError>;
     }
@@ -139,7 +147,7 @@ export const UpdateActivity: React.FC<UpdateActivityProps> = (): JSX.Element => 
         <div className="error-description">
           <MessageError size="medium">{formik.errors.description}</MessageError>
         </div>
-        <div>{getMessage()}</div>
+        <div className="message-description">{getMessage()}</div>
       </div>
     </Form>
   );

@@ -1,0 +1,25 @@
+.message-size-small {
+  font-size: small;
+}
+
+.message-size-medium {
+  font-size: medium;
+}
+
+.message-size-large {
+  font-size: large;
+}
+
+.message-variant-blue {
+  color: blue;
+  background-color: #c1cdf4;
+}
+
+.message-variant-green {
+  color: green;
+  background-color: #b2ef9b;
+}
+
+.test {
+  color: red;
+}

@@ -47,9 +47,17 @@ export const DeleteActivity: React.FC<DeleteActivityProps> = (): JSX.Element => 
 
   const getMessage = (): JSX.Element => {
     if (deleteState === DeleteState.Deleted) {
-      return <Message>Activity Deleted</Message>;
+      return (
+        <Message size="large" variant="green">
+          Activity Deleted
+        </Message>
+      );
     } else if (deleteState === DeleteState.Deleting) {
-      return <Message>Deleting Activity</Message>;
+      return (
+        <Message size="large" variant="blue">
+          Deleting Activity
+        </Message>
+      );
     } else if (deleteState === DeleteState.NotDeleted) {
       return <MessageError size="small">Activity not deleted!</MessageError>;
     }
@@ -84,7 +92,7 @@ export const DeleteActivity: React.FC<DeleteActivityProps> = (): JSX.Element => 
       <div className="error-id">
         <MessageError size="medium">{formik.errors.id}</MessageError>
       </div>
-      <div>{getMessage()}</div>
+      <div className="message-description">{getMessage()}</div>
     </Form>
   );
 };

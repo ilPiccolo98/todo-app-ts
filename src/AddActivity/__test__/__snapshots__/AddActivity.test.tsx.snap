@@ -1,5 +1,372 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`testing AddActivity component should call once the actions fetchAllActivities when addState === AddState.Added 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        class="form primary-form undefined"
+      >
+        <p>
+          <b>
+            Add Activity
+          </b>
+        </p>
+        <form
+          class=""
+        >
+          <div>
+            <div
+              class="float-left"
+            >
+              <div
+                class="secondary-container"
+                data-testid="name-addActivity"
+              >
+                <label
+                  for="name"
+                >
+                  <p
+                    class="secondary-label"
+                  >
+                    <b>
+                      Name
+                    </b>
+                  </p>
+                  <input
+                    class="textField undefined"
+                    datatestid="name-addActivity"
+                    id="name"
+                    name="name"
+                    placeholder="Insert name"
+                    type="text"
+                    value=""
+                    variant="secondary"
+                  />
+                </label>
+                <div
+                  class="error"
+                >
+                  <span
+                    class="message-error undefined small"
+                  >
+                    <b />
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div
+              class="float-right"
+            >
+              <div
+                class="secondary-container"
+                data-testid="description-addActivity"
+              >
+                <label
+                  for="description"
+                >
+                  <p
+                    class="secondary-label"
+                  >
+                    <b>
+                      Description
+                    </b>
+                  </p>
+                  <input
+                    class="textField undefined"
+                    datatestid="description-addActivity"
+                    id="description"
+                    name="description"
+                    placeholder="Insert description"
+                    type="text"
+                    value=""
+                    variant="secondary"
+                  />
+                </label>
+                <div
+                  class="error"
+                >
+                  <span
+                    class="message-error undefined small"
+                  >
+                    <b />
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div
+              class="status"
+            >
+              <span
+                class="secondary-checkbox"
+                data-testid="status-addActivity"
+              >
+                <label
+                  for="status"
+                >
+                  <input
+                    datatestid="status-addActivity"
+                    id="status"
+                    label="Status"
+                    name="status"
+                    type="checkbox"
+                    value="false"
+                    variant="secondary"
+                  />
+                  Status
+                </label>
+              </span>
+            </div>
+            <input
+              class="submit primary-submit submit-button"
+              data-testid="submit-addActivity"
+              datatestid="submit-addActivity"
+              id="submit"
+              type="submit"
+              value="Add"
+            />
+            <div
+              class="error-name"
+            >
+              <span
+                class="message-error undefined medium"
+              >
+                <b />
+              </span>
+            </div>
+            <div
+              class="error-description"
+            >
+              <span
+                class="message-error undefined medium"
+              >
+                <b />
+              </span>
+            </div>
+            <div
+              class="message-description"
+            >
+              <span
+                class="undefined message-variant-green message-size-large"
+                variant="green"
+              >
+                Activity Added
+              </span>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="form primary-form undefined"
+    >
+      <p>
+        <b>
+          Add Activity
+        </b>
+      </p>
+      <form
+        class=""
+      >
+        <div>
+          <div
+            class="float-left"
+          >
+            <div
+              class="secondary-container"
+              data-testid="name-addActivity"
+            >
+              <label
+                for="name"
+              >
+                <p
+                  class="secondary-label"
+                >
+                  <b>
+                    Name
+                  </b>
+                </p>
+                <input
+                  class="textField undefined"
+                  datatestid="name-addActivity"
+                  id="name"
+                  name="name"
+                  placeholder="Insert name"
+                  type="text"
+                  value=""
+                  variant="secondary"
+                />
+              </label>
+              <div
+                class="error"
+              >
+                <span
+                  class="message-error undefined small"
+                >
+                  <b />
+                </span>
+              </div>
+            </div>
+          </div>
+          <div
+            class="float-right"
+          >
+            <div
+              class="secondary-container"
+              data-testid="description-addActivity"
+            >
+              <label
+                for="description"
+              >
+                <p
+                  class="secondary-label"
+                >
+                  <b>
+                    Description
+                  </b>
+                </p>
+                <input
+                  class="textField undefined"
+                  datatestid="description-addActivity"
+                  id="description"
+                  name="description"
+                  placeholder="Insert description"
+                  type="text"
+                  value=""
+                  variant="secondary"
+                />
+              </label>
+              <div
+                class="error"
+              >
+                <span
+                  class="message-error undefined small"
+                >
+                  <b />
+                </span>
+              </div>
+            </div>
+          </div>
+          <div
+            class="status"
+          >
+            <span
+              class="secondary-checkbox"
+              data-testid="status-addActivity"
+            >
+              <label
+                for="status"
+              >
+                <input
+                  datatestid="status-addActivity"
+                  id="status"
+                  label="Status"
+                  name="status"
+                  type="checkbox"
+                  value="false"
+                  variant="secondary"
+                />
+                Status
+              </label>
+            </span>
+          </div>
+          <input
+            class="submit primary-submit submit-button"
+            data-testid="submit-addActivity"
+            datatestid="submit-addActivity"
+            id="submit"
+            type="submit"
+            value="Add"
+          />
+          <div
+            class="error-name"
+          >
+            <span
+              class="message-error undefined medium"
+            >
+              <b />
+            </span>
+          </div>
+          <div
+            class="error-description"
+          >
+            <span
+              class="message-error undefined medium"
+            >
+              <b />
+            </span>
+          </div>
+          <div
+            class="message-description"
+          >
+            <span
+              class="undefined message-variant-green message-size-large"
+              variant="green"
+            >
+              Activity Added
+            </span>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
 exports[`testing AddActivity component should call the addActivity action once with { id: 1, name: 'activity1', description: 'activity1', status: true, } when there is no activity 1`] = `
 Object {
   "asFragment": [Function],
@@ -144,6 +511,9 @@ Object {
                 <b />
               </span>
             </div>
+            <div
+              class="message-description"
+            />
           </div>
         </form>
       </div>
@@ -289,6 +659,9 @@ Object {
               <b />
             </span>
           </div>
+          <div
+            class="message-description"
+          />
         </div>
       </form>
     </div>
@@ -491,6 +864,9 @@ Object {
                 <b />
               </span>
             </div>
+            <div
+              class="message-description"
+            />
           </div>
         </form>
       </div>
@@ -634,6 +1010,1112 @@ Object {
               class="message-error undefined medium"
             >
               <b />
+            </span>
+          </div>
+          <div
+            class="message-description"
+          />
+        </div>
+      </form>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
+exports[`testing AddActivity component should show the message Activity Deleted when addState === AddState.Added 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        class="form primary-form undefined"
+      >
+        <p>
+          <b>
+            Add Activity
+          </b>
+        </p>
+        <form
+          class=""
+        >
+          <div>
+            <div
+              class="float-left"
+            >
+              <div
+                class="secondary-container"
+                data-testid="name-addActivity"
+              >
+                <label
+                  for="name"
+                >
+                  <p
+                    class="secondary-label"
+                  >
+                    <b>
+                      Name
+                    </b>
+                  </p>
+                  <input
+                    class="textField undefined"
+                    datatestid="name-addActivity"
+                    id="name"
+                    name="name"
+                    placeholder="Insert name"
+                    type="text"
+                    value=""
+                    variant="secondary"
+                  />
+                </label>
+                <div
+                  class="error"
+                >
+                  <span
+                    class="message-error undefined small"
+                  >
+                    <b />
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div
+              class="float-right"
+            >
+              <div
+                class="secondary-container"
+                data-testid="description-addActivity"
+              >
+                <label
+                  for="description"
+                >
+                  <p
+                    class="secondary-label"
+                  >
+                    <b>
+                      Description
+                    </b>
+                  </p>
+                  <input
+                    class="textField undefined"
+                    datatestid="description-addActivity"
+                    id="description"
+                    name="description"
+                    placeholder="Insert description"
+                    type="text"
+                    value=""
+                    variant="secondary"
+                  />
+                </label>
+                <div
+                  class="error"
+                >
+                  <span
+                    class="message-error undefined small"
+                  >
+                    <b />
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div
+              class="status"
+            >
+              <span
+                class="secondary-checkbox"
+                data-testid="status-addActivity"
+              >
+                <label
+                  for="status"
+                >
+                  <input
+                    datatestid="status-addActivity"
+                    id="status"
+                    label="Status"
+                    name="status"
+                    type="checkbox"
+                    value="false"
+                    variant="secondary"
+                  />
+                  Status
+                </label>
+              </span>
+            </div>
+            <input
+              class="submit primary-submit submit-button"
+              data-testid="submit-addActivity"
+              datatestid="submit-addActivity"
+              id="submit"
+              type="submit"
+              value="Add"
+            />
+            <div
+              class="error-name"
+            >
+              <span
+                class="message-error undefined medium"
+              >
+                <b />
+              </span>
+            </div>
+            <div
+              class="error-description"
+            >
+              <span
+                class="message-error undefined medium"
+              >
+                <b />
+              </span>
+            </div>
+            <div
+              class="message-description"
+            >
+              <span
+                class="undefined message-variant-green message-size-large"
+                variant="green"
+              >
+                Activity Added
+              </span>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="form primary-form undefined"
+    >
+      <p>
+        <b>
+          Add Activity
+        </b>
+      </p>
+      <form
+        class=""
+      >
+        <div>
+          <div
+            class="float-left"
+          >
+            <div
+              class="secondary-container"
+              data-testid="name-addActivity"
+            >
+              <label
+                for="name"
+              >
+                <p
+                  class="secondary-label"
+                >
+                  <b>
+                    Name
+                  </b>
+                </p>
+                <input
+                  class="textField undefined"
+                  datatestid="name-addActivity"
+                  id="name"
+                  name="name"
+                  placeholder="Insert name"
+                  type="text"
+                  value=""
+                  variant="secondary"
+                />
+              </label>
+              <div
+                class="error"
+              >
+                <span
+                  class="message-error undefined small"
+                >
+                  <b />
+                </span>
+              </div>
+            </div>
+          </div>
+          <div
+            class="float-right"
+          >
+            <div
+              class="secondary-container"
+              data-testid="description-addActivity"
+            >
+              <label
+                for="description"
+              >
+                <p
+                  class="secondary-label"
+                >
+                  <b>
+                    Description
+                  </b>
+                </p>
+                <input
+                  class="textField undefined"
+                  datatestid="description-addActivity"
+                  id="description"
+                  name="description"
+                  placeholder="Insert description"
+                  type="text"
+                  value=""
+                  variant="secondary"
+                />
+              </label>
+              <div
+                class="error"
+              >
+                <span
+                  class="message-error undefined small"
+                >
+                  <b />
+                </span>
+              </div>
+            </div>
+          </div>
+          <div
+            class="status"
+          >
+            <span
+              class="secondary-checkbox"
+              data-testid="status-addActivity"
+            >
+              <label
+                for="status"
+              >
+                <input
+                  datatestid="status-addActivity"
+                  id="status"
+                  label="Status"
+                  name="status"
+                  type="checkbox"
+                  value="false"
+                  variant="secondary"
+                />
+                Status
+              </label>
+            </span>
+          </div>
+          <input
+            class="submit primary-submit submit-button"
+            data-testid="submit-addActivity"
+            datatestid="submit-addActivity"
+            id="submit"
+            type="submit"
+            value="Add"
+          />
+          <div
+            class="error-name"
+          >
+            <span
+              class="message-error undefined medium"
+            >
+              <b />
+            </span>
+          </div>
+          <div
+            class="error-description"
+          >
+            <span
+              class="message-error undefined medium"
+            >
+              <b />
+            </span>
+          </div>
+          <div
+            class="message-description"
+          >
+            <span
+              class="undefined message-variant-green message-size-large"
+              variant="green"
+            >
+              Activity Added
+            </span>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
+exports[`testing AddActivity component should show the message Activity Deleted when addState === AddState.Adding 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        class="form primary-form undefined"
+      >
+        <p>
+          <b>
+            Add Activity
+          </b>
+        </p>
+        <form
+          class=""
+        >
+          <div>
+            <div
+              class="float-left"
+            >
+              <div
+                class="secondary-container"
+                data-testid="name-addActivity"
+              >
+                <label
+                  for="name"
+                >
+                  <p
+                    class="secondary-label"
+                  >
+                    <b>
+                      Name
+                    </b>
+                  </p>
+                  <input
+                    class="textField undefined"
+                    datatestid="name-addActivity"
+                    id="name"
+                    name="name"
+                    placeholder="Insert name"
+                    type="text"
+                    value=""
+                    variant="secondary"
+                  />
+                </label>
+                <div
+                  class="error"
+                >
+                  <span
+                    class="message-error undefined small"
+                  >
+                    <b />
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div
+              class="float-right"
+            >
+              <div
+                class="secondary-container"
+                data-testid="description-addActivity"
+              >
+                <label
+                  for="description"
+                >
+                  <p
+                    class="secondary-label"
+                  >
+                    <b>
+                      Description
+                    </b>
+                  </p>
+                  <input
+                    class="textField undefined"
+                    datatestid="description-addActivity"
+                    id="description"
+                    name="description"
+                    placeholder="Insert description"
+                    type="text"
+                    value=""
+                    variant="secondary"
+                  />
+                </label>
+                <div
+                  class="error"
+                >
+                  <span
+                    class="message-error undefined small"
+                  >
+                    <b />
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div
+              class="status"
+            >
+              <span
+                class="secondary-checkbox"
+                data-testid="status-addActivity"
+              >
+                <label
+                  for="status"
+                >
+                  <input
+                    datatestid="status-addActivity"
+                    id="status"
+                    label="Status"
+                    name="status"
+                    type="checkbox"
+                    value="false"
+                    variant="secondary"
+                  />
+                  Status
+                </label>
+              </span>
+            </div>
+            <input
+              class="submit primary-submit submit-button"
+              data-testid="submit-addActivity"
+              datatestid="submit-addActivity"
+              id="submit"
+              type="submit"
+              value="Add"
+            />
+            <div
+              class="error-name"
+            >
+              <span
+                class="message-error undefined medium"
+              >
+                <b />
+              </span>
+            </div>
+            <div
+              class="error-description"
+            >
+              <span
+                class="message-error undefined medium"
+              >
+                <b />
+              </span>
+            </div>
+            <div
+              class="message-description"
+            >
+              <span
+                class="undefined message-variant-blue message-size-large"
+                variant="blue"
+              >
+                Adding Activity
+              </span>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="form primary-form undefined"
+    >
+      <p>
+        <b>
+          Add Activity
+        </b>
+      </p>
+      <form
+        class=""
+      >
+        <div>
+          <div
+            class="float-left"
+          >
+            <div
+              class="secondary-container"
+              data-testid="name-addActivity"
+            >
+              <label
+                for="name"
+              >
+                <p
+                  class="secondary-label"
+                >
+                  <b>
+                    Name
+                  </b>
+                </p>
+                <input
+                  class="textField undefined"
+                  datatestid="name-addActivity"
+                  id="name"
+                  name="name"
+                  placeholder="Insert name"
+                  type="text"
+                  value=""
+                  variant="secondary"
+                />
+              </label>
+              <div
+                class="error"
+              >
+                <span
+                  class="message-error undefined small"
+                >
+                  <b />
+                </span>
+              </div>
+            </div>
+          </div>
+          <div
+            class="float-right"
+          >
+            <div
+              class="secondary-container"
+              data-testid="description-addActivity"
+            >
+              <label
+                for="description"
+              >
+                <p
+                  class="secondary-label"
+                >
+                  <b>
+                    Description
+                  </b>
+                </p>
+                <input
+                  class="textField undefined"
+                  datatestid="description-addActivity"
+                  id="description"
+                  name="description"
+                  placeholder="Insert description"
+                  type="text"
+                  value=""
+                  variant="secondary"
+                />
+              </label>
+              <div
+                class="error"
+              >
+                <span
+                  class="message-error undefined small"
+                >
+                  <b />
+                </span>
+              </div>
+            </div>
+          </div>
+          <div
+            class="status"
+          >
+            <span
+              class="secondary-checkbox"
+              data-testid="status-addActivity"
+            >
+              <label
+                for="status"
+              >
+                <input
+                  datatestid="status-addActivity"
+                  id="status"
+                  label="Status"
+                  name="status"
+                  type="checkbox"
+                  value="false"
+                  variant="secondary"
+                />
+                Status
+              </label>
+            </span>
+          </div>
+          <input
+            class="submit primary-submit submit-button"
+            data-testid="submit-addActivity"
+            datatestid="submit-addActivity"
+            id="submit"
+            type="submit"
+            value="Add"
+          />
+          <div
+            class="error-name"
+          >
+            <span
+              class="message-error undefined medium"
+            >
+              <b />
+            </span>
+          </div>
+          <div
+            class="error-description"
+          >
+            <span
+              class="message-error undefined medium"
+            >
+              <b />
+            </span>
+          </div>
+          <div
+            class="message-description"
+          >
+            <span
+              class="undefined message-variant-blue message-size-large"
+              variant="blue"
+            >
+              Adding Activity
+            </span>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
+exports[`testing AddActivity component should show the message Activity Deleted when addState === AddState.NotAdded 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        class="form primary-form undefined"
+      >
+        <p>
+          <b>
+            Add Activity
+          </b>
+        </p>
+        <form
+          class=""
+        >
+          <div>
+            <div
+              class="float-left"
+            >
+              <div
+                class="secondary-container"
+                data-testid="name-addActivity"
+              >
+                <label
+                  for="name"
+                >
+                  <p
+                    class="secondary-label"
+                  >
+                    <b>
+                      Name
+                    </b>
+                  </p>
+                  <input
+                    class="textField undefined"
+                    datatestid="name-addActivity"
+                    id="name"
+                    name="name"
+                    placeholder="Insert name"
+                    type="text"
+                    value=""
+                    variant="secondary"
+                  />
+                </label>
+                <div
+                  class="error"
+                >
+                  <span
+                    class="message-error undefined small"
+                  >
+                    <b />
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div
+              class="float-right"
+            >
+              <div
+                class="secondary-container"
+                data-testid="description-addActivity"
+              >
+                <label
+                  for="description"
+                >
+                  <p
+                    class="secondary-label"
+                  >
+                    <b>
+                      Description
+                    </b>
+                  </p>
+                  <input
+                    class="textField undefined"
+                    datatestid="description-addActivity"
+                    id="description"
+                    name="description"
+                    placeholder="Insert description"
+                    type="text"
+                    value=""
+                    variant="secondary"
+                  />
+                </label>
+                <div
+                  class="error"
+                >
+                  <span
+                    class="message-error undefined small"
+                  >
+                    <b />
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div
+              class="status"
+            >
+              <span
+                class="secondary-checkbox"
+                data-testid="status-addActivity"
+              >
+                <label
+                  for="status"
+                >
+                  <input
+                    datatestid="status-addActivity"
+                    id="status"
+                    label="Status"
+                    name="status"
+                    type="checkbox"
+                    value="false"
+                    variant="secondary"
+                  />
+                  Status
+                </label>
+              </span>
+            </div>
+            <input
+              class="submit primary-submit submit-button"
+              data-testid="submit-addActivity"
+              datatestid="submit-addActivity"
+              id="submit"
+              type="submit"
+              value="Add"
+            />
+            <div
+              class="error-name"
+            >
+              <span
+                class="message-error undefined medium"
+              >
+                <b />
+              </span>
+            </div>
+            <div
+              class="error-description"
+            >
+              <span
+                class="message-error undefined medium"
+              >
+                <b />
+              </span>
+            </div>
+            <div
+              class="message-description"
+            >
+              <span
+                class="message-error undefined small"
+              >
+                <b>
+                  Activity not added!
+                </b>
+              </span>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="form primary-form undefined"
+    >
+      <p>
+        <b>
+          Add Activity
+        </b>
+      </p>
+      <form
+        class=""
+      >
+        <div>
+          <div
+            class="float-left"
+          >
+            <div
+              class="secondary-container"
+              data-testid="name-addActivity"
+            >
+              <label
+                for="name"
+              >
+                <p
+                  class="secondary-label"
+                >
+                  <b>
+                    Name
+                  </b>
+                </p>
+                <input
+                  class="textField undefined"
+                  datatestid="name-addActivity"
+                  id="name"
+                  name="name"
+                  placeholder="Insert name"
+                  type="text"
+                  value=""
+                  variant="secondary"
+                />
+              </label>
+              <div
+                class="error"
+              >
+                <span
+                  class="message-error undefined small"
+                >
+                  <b />
+                </span>
+              </div>
+            </div>
+          </div>
+          <div
+            class="float-right"
+          >
+            <div
+              class="secondary-container"
+              data-testid="description-addActivity"
+            >
+              <label
+                for="description"
+              >
+                <p
+                  class="secondary-label"
+                >
+                  <b>
+                    Description
+                  </b>
+                </p>
+                <input
+                  class="textField undefined"
+                  datatestid="description-addActivity"
+                  id="description"
+                  name="description"
+                  placeholder="Insert description"
+                  type="text"
+                  value=""
+                  variant="secondary"
+                />
+              </label>
+              <div
+                class="error"
+              >
+                <span
+                  class="message-error undefined small"
+                >
+                  <b />
+                </span>
+              </div>
+            </div>
+          </div>
+          <div
+            class="status"
+          >
+            <span
+              class="secondary-checkbox"
+              data-testid="status-addActivity"
+            >
+              <label
+                for="status"
+              >
+                <input
+                  datatestid="status-addActivity"
+                  id="status"
+                  label="Status"
+                  name="status"
+                  type="checkbox"
+                  value="false"
+                  variant="secondary"
+                />
+                Status
+              </label>
+            </span>
+          </div>
+          <input
+            class="submit primary-submit submit-button"
+            data-testid="submit-addActivity"
+            datatestid="submit-addActivity"
+            id="submit"
+            type="submit"
+            value="Add"
+          />
+          <div
+            class="error-name"
+          >
+            <span
+              class="message-error undefined medium"
+            >
+              <b />
+            </span>
+          </div>
+          <div
+            class="error-description"
+          >
+            <span
+              class="message-error undefined medium"
+            >
+              <b />
+            </span>
+          </div>
+          <div
+            class="message-description"
+          >
+            <span
+              class="message-error undefined small"
+            >
+              <b>
+                Activity not added!
+              </b>
             </span>
           </div>
         </div>
@@ -840,6 +2322,9 @@ Object {
                 </b>
               </span>
             </div>
+            <div
+              class="message-description"
+            />
           </div>
         </form>
       </div>
@@ -987,6 +2472,9 @@ Object {
               </b>
             </span>
           </div>
+          <div
+            class="message-description"
+          />
         </div>
       </form>
     </div>
@@ -1191,6 +2679,9 @@ Object {
                 <b />
               </span>
             </div>
+            <div
+              class="message-description"
+            />
           </div>
         </form>
       </div>
@@ -1338,6 +2829,9 @@ Object {
               <b />
             </span>
           </div>
+          <div
+            class="message-description"
+          />
         </div>
       </form>
     </div>

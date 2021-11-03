@@ -182,8 +182,9 @@ const activitiesSlice = createSlice({
   },
 });
 
-export const activitiesSelector = (state: RootState) =>
-  state.activities.activities;
+export const activitiesSelector = (state: RootState) => {
+  return state.activities.activities;
+};
 export const retrievingStateSelector = (state: RootState) =>
   state.activities.retrievingState;
 export const addStateSelector = (state: RootState) =>

@@ -33,13 +33,18 @@ const getDeleteActivityComponents = (
   return { idTextField, submit };
 };
 
-const activitiesSelectorSpy = jest.spyOn(actions, "activitiesSelector");
-const deleteActivitySpy = jest.spyOn(actions, "deleteActivity");
-
 describe("testing DeleteActivity component", () => {
+  const deleteStateSelectorSpy = jest.spyOn(actions, "deleteStateSelector");
+  const fetchAllActivitiesSpy = jest.spyOn(actions, "fetchAllActivities");
+  const activitiesSelectorSpy = jest.spyOn(actions, "activitiesSelector");
+  const deleteActivitySpy = jest.spyOn(actions, "deleteActivity");
   beforeEach(() => {
     activitiesSelectorSpy.mockReset().mockReturnValue([]);
-    deleteActivitySpy.mockReset();
+    deleteActivitySpy.mockClear();
+    deleteStateSelectorSpy
+      .mockReset()
+      .mockReturnValue(actions.DeleteState.Null);
+    fetchAllActivitiesSpy.mockClear();
   });
 
   it("should call the deleteActivity actions with { id: 1 }", async () => {
@@ -63,25 +68,7 @@ describe("testing DeleteActivity component", () => {
     await waitFor(() => {
       fireEvent.click(submit);
     });
-    expect(deleteActivitySpy).toHaveBeenCalledWith({ id: 1 });
-    expect(component).toMatchSnapshot();
-  });
-
-  it.skip("shouldn't call the deleteActivity actions when there is no activity", async () => {
-    activitiesSelectorSpy.mockReset().mockReturnValue([]);
-    const component = renderDeleteActivity();
-    const { idTextField, submit } = getDeleteActivityComponents(component);
-    await waitFor(() => {
-      fireEvent.change(idTextField, {
-        target: {
-          value: "1",
-        },
-      });
-    });
-    await waitFor(() => {
-      fireEvent.click(submit);
-    });
-    expect(deleteActivitySpy).not.toHaveBeenCalled();
+    expect(deleteActivitySpy).toHaveBeenCalledWith(1);
     expect(component).toMatchSnapshot();
   });
 
@@ -100,6 +87,45 @@ describe("testing DeleteActivity component", () => {
       fireEvent.click(submit);
     });
     expect(deleteActivitySpy).not.toHaveBeenCalled();
+    expect(component).toMatchSnapshot();
+  });
+
+  it("should call the fetchAllActivities action once when deleteState === DeleteState.Deleted", () => {
+    deleteStateSelectorSpy
+      .mockReset()
+      .mockReturnValue(actions.DeleteState.Deleted);
+    const component = renderDeleteActivity();
+    expect(fetchAllActivitiesSpy).toHaveBeenCalledTimes(1);
+    expect(component).toMatchSnapshot();
+  });
+
+  it("should show the message Activity Deleted when deleteState === DeleteState.Deleted", () => {
+    deleteStateSelectorSpy
+      .mockReset()
+      .mockReturnValue(actions.DeleteState.Deleted);
+    const component = renderDeleteActivity();
+    const message = component.getByText(/Activity Deleted/i);
+    expect(message.textContent).toBe("Activity Deleted");
+    expect(component).toMatchSnapshot();
+  });
+
+  it("should show the message Activity Deleted when deleteState === DeleteState.Deleting", () => {
+    deleteStateSelectorSpy
+      .mockReset()
+      .mockReturnValue(actions.DeleteState.Deleting);
+    const component = renderDeleteActivity();
+    const message = component.getByText(/Deleting Activity/i);
+    expect(message.textContent).toBe("Deleting Activity");
+    expect(component).toMatchSnapshot();
+  });
+
+  it("should show the message Activity Deleted when deleteState === DeleteState.NotDeleted", () => {
+    deleteStateSelectorSpy
+      .mockReset()
+      .mockReturnValue(actions.DeleteState.NotDeleted);
+    const component = renderDeleteActivity();
+    const message = component.getByText(/Activity not deleted!/i);
+    expect(message.textContent).toBe("Activity not deleted!");
     expect(component).toMatchSnapshot();
   });
 });

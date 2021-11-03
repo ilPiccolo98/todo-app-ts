@@ -52,9 +52,17 @@ export const AddActivity: React.FC<AddActivityProps> = (): JSX.Element => {
 
   const getMessage = (): JSX.Element => {
     if (addState === AddState.Added) {
-      return <Message>Activity Added</Message>;
+      return (
+        <Message size="large" variant="green">
+          Activity Added
+        </Message>
+      );
     } else if (addState === AddState.Adding) {
-      return <Message>Adding Activity</Message>;
+      return (
+        <Message size="large" variant="blue">
+          Adding Activity
+        </Message>
+      );
     } else if (addState === AddState.NotAdded) {
       return <MessageError size="small">Activity not added!</MessageError>;
     }
@@ -115,7 +123,7 @@ export const AddActivity: React.FC<AddActivityProps> = (): JSX.Element => {
         <div className="error-description">
           <MessageError size="medium">{formik.errors.description}</MessageError>
         </div>
-        <div>{getMessage()}</div>
+        <div className="message-description">{getMessage()}</div>
       </div>
     </Form>
   );

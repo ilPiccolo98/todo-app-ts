@@ -1,0 +1,16 @@
+.loading-style {
+  color: #b6bc0f;
+  background-color: #f2f4ab;
+}
+
+.loading-size-small {
+  font-size: small;
+}
+
+.loading-size-medium {
+  font-size: medium;
+}
+
+.loading-size-large {
+  font-size: large;
+}

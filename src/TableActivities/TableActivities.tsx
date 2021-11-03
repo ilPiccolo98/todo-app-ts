@@ -65,7 +65,7 @@ const TableActivities: React.FC = (): JSX.Element => {
       </table>
     );
   } else if (retrievingState === RetrieveState.Loading) {
-    return <Loading />;
+    return <Loading size="medium" />;
   }
   return <MessageError size="medium">Activities not retrieved!</MessageError>;
 };
